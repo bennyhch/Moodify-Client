@@ -1,30 +1,46 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./login.module.css";
 import landingLogo from "../../assets/loginLogo.png";
-import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { postLoginInfo } from "../../features/login/loginSlice";
+import { useNavigate } from "react-router-dom";
+
+// insert invalid credential case!!!!
+// loading page
 
 const Login = () => {
-  const [isNewMember, setIsNewMember] = useState(false);
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
   const usernameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const [isNewMember, setIsNewMember] = useState(false);
 
   const registerHandler = () => {
     setIsNewMember((prev) => !prev);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    const enteredUsername = usernameRef.current.value;
     const enteredEmail = emailRef.current.value;
     const enteredPassword = passwordRef.current.value;
-
-    fetch("");
-
-    usernameRef.current.value = "";
-    emailRef.current.value = "";
-    passwordRef.current.value = "";
+    const user = {
+      email: enteredEmail,
+      password: enteredPassword,
+    };
+    if (isNewMember) {
+      const enteredUsername = usernameRef.current.value;
+      user.username = enteredUsername;
+      user.endpoint = "register";
+      await dispatch(postLoginInfo(user));
+    } else {
+      user.endpoint = "login";
+      await dispatch(postLoginInfo(user));
+    }
+    // check if valid credential, then proceed if ok
+    navigate("/logger");
   };
 
   return (
@@ -36,14 +52,32 @@ const Login = () => {
 
         {isNewMember && <label htmlFor="username">User Name</label>}
         {isNewMember && (
-          <input type="text" id="username" required ref={usernameRef} />
+          <input
+            type="text"
+            id="username"
+            required
+            ref={usernameRef}
+            placeholder="Enter your user name"
+          />
         )}
 
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" required ref={emailRef} />
+        <input
+          type="email"
+          id="email"
+          required
+          ref={emailRef}
+          placeholder="Enter your email"
+        />
 
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" required ref={passwordRef} />
+        <input
+          type="password"
+          id="password"
+          required
+          ref={passwordRef}
+          placeholder="Enter your password"
+        />
 
         <button type="submit">Submit</button>
 
