@@ -16,3 +16,14 @@ const sliderMarks = [
 ];
 
 export default sliderMarks;
+
+export const toggleMarks = [
+  {
+    value: 0,
+    label: "NO",
+  },
+  {
+    value: 1,
+    label: "YES",
+  },
+];

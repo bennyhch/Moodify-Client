@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SliderBox from "../tools/SliderBox";
 import dailyItems from "../../data/dailyItems";
+import { toggleDailyItems } from "../../data/toggleDailyItems";
+import ToggleBox from "../tools/ToggleBox";
 
 const Dailys = () => {
   const [emotionsProfile, setEmotionsProfile] = useState({
@@ -10,6 +12,8 @@ const Dailys = () => {
     restlessness: 0,
     irritability: 0,
     suicidal: 0,
+    psychoticSymptoms: false,
+    panicAttack: false,
   });
 
   const submitHandler = async (e) => {
@@ -21,6 +25,8 @@ const Dailys = () => {
       restlessness,
       irritability,
       suicidal,
+      psychoticSymptoms,
+      panicAttack,
     } = emotionsProfile;
     console.log(emotionsProfile);
     try {
@@ -37,6 +43,8 @@ const Dailys = () => {
           restlessness,
           irritability,
           suicidal,
+          psychoticSymptoms,
+          panicAttack,
         }),
       });
     } catch (error) {
@@ -46,17 +54,32 @@ const Dailys = () => {
 
   return (
     <form onSubmit={submitHandler}>
-      {dailyItems.map((dailyItem) => {
-        const { id, title, emotion } = dailyItem;
-        return (
-          <SliderBox
-            key={id}
-            title={title}
-            emotion={emotion}
-            setEmotionsProfile={setEmotionsProfile}
-          />
-        );
-      })}
+      <>
+        {dailyItems.map((dailyItem) => {
+          const { id, title, emotion } = dailyItem;
+          return (
+            <SliderBox
+              key={id}
+              title={title}
+              emotion={emotion}
+              setEmotionsProfile={setEmotionsProfile}
+            />
+          );
+        })}
+      </>
+      <>
+        {toggleDailyItems.map((toggleItem) => {
+          const { id, title, toggle } = toggleItem;
+          return (
+            <ToggleBox
+              key={id}
+              title={title}
+              toggle={toggle}
+              setEmotionsProfile={setEmotionsProfile}
+            />
+          );
+        })}
+      </>
       <button type="sumbit">Submit</button>
     </form>
   );
