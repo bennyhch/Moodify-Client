@@ -1,0 +1,12 @@
+.box {
+  border: 1px solid grey;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box p {
+  text-align: center;
+}
