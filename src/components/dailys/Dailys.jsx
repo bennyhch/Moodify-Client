@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import SliderBox from "../tools/SliderBox";
 import dailyItems from "../../data/dailyItems";
-import { useSelector, useDispatch } from "react-redux";
-import { postEmotionsProfile } from "../../features/emotionsProfileSlice";
 
 const Dailys = () => {
   const [emotionsProfile, setEmotionsProfile] = useState({
