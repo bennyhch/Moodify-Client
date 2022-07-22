@@ -27,3 +27,18 @@ export const toggleMarks = [
     label: "YES",
   },
 ];
+
+export const sleepMarks = [
+  {
+    value: 0,
+    label: "0",
+  },
+  {
+    value: 12,
+    label: "12",
+  },
+  {
+    value: 24,
+    label: "24",
+  },
+];

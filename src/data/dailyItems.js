@@ -32,3 +32,24 @@ const dailyItems = [
 ];
 
 export default dailyItems;
+
+export const toggleDailyItems = [
+  {
+    id: 7,
+    title: "Psychotic Symptom",
+    toggle: "psychoticSymptoms",
+  },
+  {
+    id: 8,
+    title: "Panic Attack",
+    toggle: "panicAttack",
+  },
+];
+
+export const sleepDailyItems = [
+  {
+    id: 9,
+    title: "Hours slept last night",
+    hrs: "hoursOfSleep",
+  },
+];

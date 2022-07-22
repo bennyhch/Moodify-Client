@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import SliderBox from "../tools/SliderBox";
 import dailyItems from "../../data/dailyItems";
-import { toggleDailyItems } from "../../data/toggleDailyItems";
+import { toggleDailyItems } from "../../data/dailyItems";
 import ToggleBox from "../tools/ToggleBox";
+import SleepBox from "../tools/SleepBox";
 
 const Dailys = () => {
   const [emotionsProfile, setEmotionsProfile] = useState({
@@ -14,6 +15,7 @@ const Dailys = () => {
     suicidal: 0,
     psychoticSymptoms: false,
     panicAttack: false,
+    hoursOfSleep: 0,
   });
 
   const submitHandler = async (e) => {
@@ -27,6 +29,7 @@ const Dailys = () => {
       suicidal,
       psychoticSymptoms,
       panicAttack,
+      hoursOfSleep,
     } = emotionsProfile;
     console.log(emotionsProfile);
     try {
@@ -45,6 +48,7 @@ const Dailys = () => {
           suicidal,
           psychoticSymptoms,
           panicAttack,
+          hoursOfSleep,
         }),
       });
     } catch (error) {
@@ -79,6 +83,9 @@ const Dailys = () => {
             />
           );
         })}
+      </>
+      <>
+        <SleepBox setEmotionsProfile={setEmotionsProfile} />
       </>
       <button type="sumbit">Submit</button>
     </form>
