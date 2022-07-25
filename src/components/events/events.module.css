@@ -1,0 +1,23 @@
+
+/* from previous projects  */
+/* https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons */
+.emojiContainer [type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.emojiContainer [type="radio"] + img {
+  cursor: pointer;
+}
+
+.emojiContainer [type="radio"]:checked + img {
+  background-color: #ffdbdb;
+  border-radius: 40px;
+  border: 1px solid black;
+}
+
+.emojiContainer img {
+  transition: 0.8s;
+}
