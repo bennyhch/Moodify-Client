@@ -6,10 +6,12 @@ const Emojis = (props) => {
 
   const clickEmojiHandler = (e) => {
     console.log("value?", e.target.value);
-
+    console.log(eventsProfile, "eventsProfile[emotions]");
+    // title?
+    // set the click
     setEventsProfile((prev) => ({
       ...prev,
-      emotions: e.target.value,
+      emotions: e.target.title,
     }));
   };
   return (
@@ -17,8 +19,10 @@ const Emojis = (props) => {
       <input
         type="radio"
         id={id}
-        value={emotions}
-        onChange={clickEmojiHandler}
+        title={emotions}
+        // value={emotions}
+        value={eventsProfile[emotions]}
+        onClick={clickEmojiHandler}
         // same name ensure just one btn can be clicked
         name="emoji"
         required

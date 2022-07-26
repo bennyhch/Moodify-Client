@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Tooltip from "@mui/material/Tooltip";
+// import Tooltip from "@mui/material/Tooltip";
 import styles from "./events.module.css";
 import Emojis from "./Emojis";
 import emojiItems from "../../data/emojiItems";
@@ -43,8 +43,9 @@ const Events = () => {
           incident,
         }),
       });
-      console.log("eventsProfile", eventsProfile);
+      console.log("eventsProfile1", eventsProfile);
       setEventsProfile(initialState);
+      console.log("eventsProfil2", eventsProfile);
     } catch (error) {
       console.log(error);
     }

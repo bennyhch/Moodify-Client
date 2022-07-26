@@ -40,7 +40,7 @@ const Login = () => {
       await dispatch(postLoginInfo(user));
     }
     // check if valid credential, then proceed if ok
-    navigate("/logger");
+    navigate("/dashboard");
   };
 
   return (
