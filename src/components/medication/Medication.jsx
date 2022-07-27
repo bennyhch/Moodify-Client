@@ -2,13 +2,23 @@ import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteMedication } from "../../features/medication/medicationSlice";
+import {
+  deleteMedication,
+  editMed,
+  getOneMedication,
+} from "../../features/medication/medicationSlice";
 import { GoDiffAdded } from "react-icons/go";
 import { openMedModal } from "../../features/modal/modalSlice";
 
 const Medication = ({ setChangeOfItems }) => {
   const dispatch = useDispatch();
   const { medList } = useSelector((store) => store.medication);
+
+  const editHandler = async (medId) => {
+    await dispatch(getOneMedication(medId));
+    dispatch(editMed());
+    dispatch(openMedModal());
+  };
 
   const deleteHandler = async (medId) => {
     await dispatch(deleteMedication(medId));
@@ -38,7 +48,7 @@ const Medication = ({ setChangeOfItems }) => {
                 <td>{`${medicationName} (${dosage}${units})`}</td>
                 <td>{`${frequency}, ${timeOfDay}`}</td>
                 <td>
-                  <button>
+                  <button onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
                   </button>
                   <button onClick={deleteHandler.bind(null, _id)}>

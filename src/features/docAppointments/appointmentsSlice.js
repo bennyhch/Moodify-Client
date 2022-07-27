@@ -125,7 +125,7 @@ const docAppointmentsSlices = createSlice({
       state.isEditing = false;
       console.log("update action.payload:", action.payload);
     },
-    [updateAppointmentById.pending]: (state) => {
+    [updateAppointmentById.rejected]: (state) => {
       state.isLoading = false;
       state.isEditing = false;
     },

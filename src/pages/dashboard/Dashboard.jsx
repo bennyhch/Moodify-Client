@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getMedications());
-  }, [dispatch, changeOfItems]);
+  }, [dispatch, changeOfItems, isMedModalOpen]);
 
   if (isLoading) {
     return (

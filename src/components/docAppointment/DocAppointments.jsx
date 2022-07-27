@@ -35,7 +35,7 @@ const DocAppointments = ({ setChangeOfItems }) => {
   if (isLoading) {
     return (
       <div>
-        <h1>Loading ...</h1>
+        <h1>APPOINTMENT Loading ...</h1>
       </div>
     );
   }
