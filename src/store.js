@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import loginSlice from "./features/login/loginSlice";
 import docAppointmentsSlice from "./features/docAppointments/appointmentsSlice";
 import modalSlice from "./features/modal/modalSlice";
+import medicationSlice from "./features/medication/medicationSlice";
 
 // modalReducer loginReducer docAppointmentsReducer
 export const store = configureStore({
@@ -9,5 +10,6 @@ export const store = configureStore({
     login: loginSlice,
     docAppointment: docAppointmentsSlice,
     modal: modalSlice,
+    medication: medicationSlice,
   },
 });

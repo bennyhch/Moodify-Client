@@ -4,18 +4,26 @@ import DocAppointments from "../../components/docAppointment/DocAppointments";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppointments } from "../../features/docAppointments/appointmentsSlice";
 import DocModal from "../../components/docAppointment/DocModal";
+import Medication from "../../components/medication/Medication";
+import { getMedications } from "../../features/medication/medicationSlice";
+import MedModal from "../../components/medication/MedModal";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
   const { isLoading, docAppointments } = useSelector(
     (store) => store.docAppointment
   );
-  const { isModalOpen } = useSelector((store) => store.modal);
+  const { isModalOpen, isMedModalOpen } = useSelector((store) => store.modal);
+
   const [changeOfItems, setChangeOfItems] = useState(false);
 
   useEffect(() => {
     dispatch(getAppointments());
   }, [dispatch, changeOfItems, isModalOpen]);
+
+  useEffect(() => {
+    dispatch(getMedications());
+  }, [dispatch, changeOfItems]);
 
   if (isLoading) {
     return (
@@ -39,6 +47,9 @@ const Dashboard = () => {
     <>
       {isModalOpen && <DocModal />}
       <DocAppointments setChangeOfItems={setChangeOfItems} />
+
+      {isMedModalOpen && <MedModal />}
+      <Medication setChangeOfItems={setChangeOfItems} />
     </>
   );
 };

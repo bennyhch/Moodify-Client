@@ -29,7 +29,7 @@ export const getAppointments = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/appointment");
-      console.log("resp.data.appointments:", resp.data.appointments);
+      // console.log("resp.data.appointments:", resp.data.appointments);
       return resp.data.appointments;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -96,7 +96,7 @@ const docAppointmentsSlices = createSlice({
       state.isLoading = true;
     },
     [getAppointments.fulfilled]: (state, action) => {
-      console.log("action:", action);
+      // console.log("action:", action);
       state.isLoading = false;
       state.docAppointments = action.payload;
     },
