@@ -7,19 +7,10 @@ import DocModal from "../../components/docAppointment/DocModal";
 import Medication from "../../components/medication/Medication";
 import { getMedications } from "../../features/medication/medicationSlice";
 import MedModal from "../../components/medication/MedModal";
-import { useNavigate } from "react-router-dom";
+import ExampleChart from "../../components/charts/ExampleChart";
+import SleepBarChart from "../../components/charts/SleepBarChart";
 
 const Dashboard = () => {
-  // const naviage = useNavigate();
-
-  // const { correctAuth } = useSelector((store) => store.login);
-
-  // if (!correctAuth) {
-  //   alert("invalid credential");
-  //   naviage("/login");
-  //   //return?
-  // }
-
   const dispatch = useDispatch();
   const { isLoading, docAppointments } = useSelector(
     (store) => store.docAppointment
@@ -61,6 +52,9 @@ const Dashboard = () => {
 
       {isMedModalOpen && <MedModal />}
       <Medication setChangeOfItems={setChangeOfItems} />
+
+      <ExampleChart />
+      <SleepBarChart />
     </>
   );
 };

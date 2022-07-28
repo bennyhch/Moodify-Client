@@ -22,9 +22,9 @@ function App() {
         >
           <Route index element={<Dashboard />} />
           <Route path="logger" element={<Logger />} />
-          <Route path="statistics" element={<Statistics />} />
           <Route path="journal" element={<Journal />} />
         </Route>
+        <Route path="statistics" element={<Statistics />} />
         <Route path="/login" element={<Login />} />
 
         {/* <Route path='*' element={<Error />} /> */}

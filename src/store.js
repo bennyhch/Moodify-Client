@@ -3,6 +3,7 @@ import loginSlice from "./features/login/loginSlice";
 import docAppointmentsSlice from "./features/docAppointments/appointmentsSlice";
 import modalSlice from "./features/modal/modalSlice";
 import medicationSlice from "./features/medication/medicationSlice";
+import dailyEmotionSlice from "./features/dailyEmotionSlice";
 
 // modalReducer loginReducer docAppointmentsReducer
 export const store = configureStore({
@@ -11,5 +12,6 @@ export const store = configureStore({
     docAppointment: docAppointmentsSlice,
     modal: modalSlice,
     medication: medicationSlice,
+    dailyEmotion: dailyEmotionSlice,
   },
 });

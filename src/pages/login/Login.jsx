@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import styles from "./login.module.css";
 import landingLogo from "../../assets/loginLogo.png";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserName, postLoginInfo } from "../../features/login/loginSlice";
+import { postLoginInfo } from "../../features/login/loginSlice";
 import { useNavigate } from "react-router-dom";
 
 // insert invalid credential case!!!!

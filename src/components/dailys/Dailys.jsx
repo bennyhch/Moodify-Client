@@ -4,8 +4,10 @@ import dailyItems from "../../data/dailyItems";
 import { toggleDailyItems } from "../../data/dailyItems";
 import ToggleBox from "../tools/ToggleBox";
 import SleepBox from "../tools/SleepBox";
+import moment from "moment";
 
 const Dailys = () => {
+  const today = new Date();
   const [emotionsProfile, setEmotionsProfile] = useState({
     depressionExtreme: 0,
     elevationExtreme: 0,
@@ -16,6 +18,7 @@ const Dailys = () => {
     psychoticSymptoms: false,
     panicAttack: false,
     hoursOfSleep: 0,
+    day: moment(today).format("YYYY-MM-DD"),
   });
 
   const submitHandler = async (e) => {
@@ -30,6 +33,7 @@ const Dailys = () => {
       psychoticSymptoms,
       panicAttack,
       hoursOfSleep,
+      day,
     } = emotionsProfile;
     console.log(emotionsProfile);
     try {
@@ -39,7 +43,7 @@ const Dailys = () => {
           "Content-type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify({
-          day: new Date(),
+          day,
           depressionExtreme,
           elevationExtreme,
           anxietyExtreme,
@@ -56,8 +60,25 @@ const Dailys = () => {
     }
   };
 
+  const dayHandler = (e) => {
+    console.log(e.target.value);
+    setEmotionsProfile((prev) => ({
+      ...prev,
+      day: e.target.value,
+    }));
+  };
+
   return (
     <form onSubmit={submitHandler}>
+      <>
+        <input
+          type="date"
+          value={emotionsProfile.day}
+          onChange={dayHandler}
+          max={moment(today).format("YYYY-MM-DD")}
+        />
+        <button type="sumbit">Submit</button>
+      </>
       <>
         {dailyItems.map((dailyItem) => {
           const { id, title, emotion } = dailyItem;
@@ -87,7 +108,6 @@ const Dailys = () => {
       <>
         <SleepBox setEmotionsProfile={setEmotionsProfile} />
       </>
-      <button type="sumbit">Submit</button>
     </form>
   );
 };
