@@ -29,6 +29,7 @@ export const getAppointments = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/appointment");
+      console.log("get state:", thunkAPI.getState().login.correctAuth);
       // console.log("resp.data.appointments:", resp.data.appointments);
       return resp.data.appointments;
     } catch (error) {
