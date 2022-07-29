@@ -53,7 +53,7 @@ const Dashboard = () => {
       {isMedModalOpen && <MedModal />}
       <Medication setChangeOfItems={setChangeOfItems} />
 
-      <ExampleChart />
+      {/* <ExampleChart /> */}
       <SleepBarChart />
     </>
   );

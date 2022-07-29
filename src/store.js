@@ -4,6 +4,7 @@ import docAppointmentsSlice from "./features/docAppointments/appointmentsSlice";
 import modalSlice from "./features/modal/modalSlice";
 import medicationSlice from "./features/medication/medicationSlice";
 import dailyEmotionSlice from "./features/dailyEmotionSlice";
+import eventSlice from "./features/eventSlice";
 
 // modalReducer loginReducer docAppointmentsReducer
 export const store = configureStore({
@@ -13,5 +14,6 @@ export const store = configureStore({
     modal: modalSlice,
     medication: medicationSlice,
     dailyEmotion: dailyEmotionSlice,
+    event: eventSlice,
   },
 });

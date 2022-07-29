@@ -29,6 +29,11 @@ const SleepBarChart = () => {
       value: dailyEmotionLastWeek[i].hoursOfSleep,
     });
   }
+  const totalHrsSleep = chartData.reduce((prev, curr) => {
+    return prev + curr.value;
+  }, 0);
+  const averageHrsSleep = (totalHrsSleep / 7).toFixed(1);
+
   const map = {
     Monday: 1,
     Tuesday: 2,
@@ -43,37 +48,6 @@ const SleepBarChart = () => {
     return map[a.label] - map[b.label];
   });
 
-  // const chartData = [
-  //   {
-  //     label: "Sunday",
-  //     value: "10",
-  //   },
-  //   {
-  //     label: "Monday",
-  //     value: "8",
-  //   },
-  //   {
-  //     label: "Tuesday",
-  //     value: "7",
-  //   },
-  //   {
-  //     label: "Wednesday",
-  //     value: "7",
-  //   },
-  //   {
-  //     label: "Thursday",
-  //     value: "1",
-  //   },
-  //   {
-  //     label: "Friday",
-  //     value: "15",
-  //   },
-  //   {
-  //     label: "Saturday",
-  //     value: "10",
-  //   },
-  // ];
-
   // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
     type: "column2d", // The chart type
@@ -87,7 +61,7 @@ const SleepBarChart = () => {
         caption: "HOURS OF SLEEP PER DAY: THIS WEEK",
 
         //Set the x-axis name
-        xAxisName: "Average sleep per night: 7.8 HOURS",
+        xAxisName: `Average sleep per night: ${averageHrsSleep} HOURS`,
         //Set the y-axis name
         // yAxisName: "Reserves (MMbbl)",
         //Set the theme for your chart
