@@ -13,7 +13,7 @@ const JournalCards = ({ emotion, imageSrc }) => {
   const { allEvent } = useSelector((store) => store.event);
   console.log("allevent", allEvent);
   const eventsByEmo = allEvent.filter((event) => event.emotions === emotion);
-  // console.log("eventsbyemo", eventsByEmo);
+  console.log("eventsbyemo", eventsByEmo);
 
   return (
     <div>
@@ -32,16 +32,18 @@ const JournalCards = ({ emotion, imageSrc }) => {
           <Typography>Incident</Typography>
         </AccordionSummary>
         {eventsByEmo.map((el) => {
-          const { incident, timeOfEvent } = el;
+          const { incident, timeOfEvent, _id } = el;
           return (
-            <AccordionDetails>
-              <Typography>
-                <div>{incident} </div>
-                <div>
-                  {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
-                </div>
-              </Typography>
-            </AccordionDetails>
+            <div key={_id}>
+              <AccordionDetails>
+                <Typography component={"div"}>
+                  <div>{incident} </div>
+                  <div>
+                    {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
+                  </div>
+                </Typography>
+              </AccordionDetails>
+            </div>
           );
         })}
       </Accordion>
@@ -55,16 +57,18 @@ const JournalCards = ({ emotion, imageSrc }) => {
           <Typography>Thought</Typography>
         </AccordionSummary>
         {eventsByEmo.map((el) => {
-          const { thought, timeOfEvent } = el;
+          const { thought, timeOfEvent, _id } = el;
           return (
-            <AccordionDetails>
-              <Typography>
-                <div>{thought} </div>
-                <div>
-                  {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
-                </div>
-              </Typography>
-            </AccordionDetails>
+            <div key={_id}>
+              <AccordionDetails>
+                <Typography component={"div"}>
+                  <div>{thought} </div>
+                  <div>
+                    {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
+                  </div>
+                </Typography>
+              </AccordionDetails>
+            </div>
           );
         })}
       </Accordion>
@@ -78,16 +82,18 @@ const JournalCards = ({ emotion, imageSrc }) => {
           <Typography>Behavior</Typography>
         </AccordionSummary>
         {eventsByEmo.map((el) => {
-          const { behavior, timeOfEvent } = el;
+          const { behavior, timeOfEvent, _id } = el;
           return (
-            <AccordionDetails>
-              <Typography>
-                <div>{behavior} </div>
-                <div>
-                  {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
-                </div>
-              </Typography>
-            </AccordionDetails>
+            <div key={_id}>
+              <AccordionDetails>
+                <Typography component={"div"}>
+                  <div>{behavior} </div>
+                  <div>
+                    {moment(timeOfEvent).format("MMMM Do YYYY, h:mm:ss a")}
+                  </div>
+                </Typography>
+              </AccordionDetails>
+            </div>
           );
         })}
       </Accordion>

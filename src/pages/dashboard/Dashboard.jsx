@@ -8,6 +8,9 @@ import Medication from "../../components/medication/Medication";
 import { getMedications } from "../../features/medication/medicationSlice";
 import MedModal from "../../components/medication/MedModal";
 import SleepBarChart from "../../components/charts/SleepBarChart";
+import { getAllDailyEmotions } from "../../features/dailyEmotionSlice";
+import { getAllEvents } from "../../features/eventSlice";
+import EventDoughnutChart from "../../components/charts/EventDoughnutChart";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -25,6 +28,11 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(getMedications());
   }, [dispatch, changeOfItems, isMedModalOpen]);
+
+  useEffect(() => {
+    dispatch(getAllDailyEmotions());
+    dispatch(getAllEvents());
+  }, [dispatch]);
 
   if (isLoading) {
     return (
@@ -54,6 +62,7 @@ const Dashboard = () => {
 
       {/* <ExampleChart /> */}
       <SleepBarChart />
+      <EventDoughnutChart />
     </>
   );
 };
