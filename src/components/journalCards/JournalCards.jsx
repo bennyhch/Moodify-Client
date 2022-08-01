@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import EventPieChart from "../charts/EventPieChart";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -18,6 +19,8 @@ const JournalCards = ({ emotion, imageSrc }) => {
     <div>
       <p>{emotion}</p>
       <img src={imageSrc} alt={`${emotion}-emoji`} />
+
+      <EventPieChart emotion={emotion} />
 
       {/* incident */}
       <Accordion>

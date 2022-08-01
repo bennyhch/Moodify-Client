@@ -42,7 +42,7 @@ const ChartComponent = () => {
     dataSource: {
       // Chart Configuration
       chart: {
-        caption: "The frequent of emotions: THIS WEEK",
+        caption: "The frequency of emotions: THIS WEEK",
         decimals: 0,
         pieRadius: "45%",
         doughnutRadius: "60%",
