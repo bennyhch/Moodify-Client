@@ -7,7 +7,6 @@ import DocModal from "../../components/docAppointment/DocModal";
 import Medication from "../../components/medication/Medication";
 import { getMedications } from "../../features/medication/medicationSlice";
 import MedModal from "../../components/medication/MedModal";
-import ExampleChart from "../../components/charts/ExampleChart";
 import SleepBarChart from "../../components/charts/SleepBarChart";
 
 const Dashboard = () => {

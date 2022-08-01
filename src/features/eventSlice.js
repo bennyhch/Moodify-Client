@@ -4,9 +4,9 @@ import moment from "moment";
 // time
 const today = moment();
 const sevenDaysBefore = moment().subtract(7, "days");
-console.log("today", today);
-console.log("7 days before", sevenDaysBefore);
-console.log("in between", today.isBetween(sevenDaysBefore, today, null, []));
+// console.log("today", today);
+// console.log("7 days before", sevenDaysBefore);
+// console.log("in between", today.isBetween(sevenDaysBefore, today, null, []));
 
 const initialState = {
   allEvent: [],
@@ -19,7 +19,7 @@ export const getAllEvents = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/event");
-      console.log("resp.data.events", resp.data.events);
+      // console.log("resp.data.events", resp.data.events);
       return resp.data.events;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -38,7 +38,7 @@ const eventSlice = createSlice({
       state.eventEmotionLastWeek = state.allEvent.filter((el) =>
         moment(el.timeOfEvent).isBetween(sevenDaysBefore, today, null, [])
       );
-      console.log("last week ", state.eventEmotionLastWeek);
+      // console.log("last week ", state.eventEmotionLastWeek);
     },
   },
 });

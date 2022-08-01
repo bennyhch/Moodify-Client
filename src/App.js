@@ -15,17 +15,18 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectedRoute>
-              <SharedLayout />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <SharedLayout />
+            // </ProtectedRoute>
           }
         >
           <Route index element={<Dashboard />} />
+          <Route path="statistics" element={<Statistics />} />
+
           <Route path="logger" element={<Logger />} />
           <Route path="journal" element={<Journal />} />
         </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="statistics" element={<Statistics />} />
 
         {/* <Route path='*' element={<Error />} /> */}
       </Routes>

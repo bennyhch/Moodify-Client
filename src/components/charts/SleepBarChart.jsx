@@ -20,6 +20,9 @@ import moment from "moment";
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
 const SleepBarChart = () => {
+  const { averageHrsSleepLastWeek } = useSelector(
+    (store) => store.dailyEmotion
+  );
   const { dailyEmotionLastWeek } = useSelector((store) => store.dailyEmotion);
 
   const chartData = [];
@@ -29,10 +32,6 @@ const SleepBarChart = () => {
       value: dailyEmotionLastWeek[i].hoursOfSleep,
     });
   }
-  const totalHrsSleep = chartData.reduce((prev, curr) => {
-    return prev + curr.value;
-  }, 0);
-  const averageHrsSleep = (totalHrsSleep / 7).toFixed(1);
 
   const map = {
     Monday: 1,
@@ -59,11 +58,8 @@ const SleepBarChart = () => {
       chart: {
         //Set the chart caption
         caption: "HOURS OF SLEEP PER DAY: THIS WEEK",
-
         //Set the x-axis name
-        xAxisName: `Average sleep per night: ${averageHrsSleep} HOURS`,
-        //Set the y-axis name
-        // yAxisName: "Reserves (MMbbl)",
+        xAxisName: `Average sleep per night: ${averageHrsSleepLastWeek} HOURS`,
         //Set the theme for your chart
         theme: "fusion",
       },

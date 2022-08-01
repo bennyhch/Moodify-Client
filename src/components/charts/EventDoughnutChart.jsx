@@ -29,7 +29,7 @@ const ChartComponent = () => {
   const chartData = [];
   for (let key in emotionTotal) {
     chartData.push({
-      label: key,
+      label: key.toUpperCase(),
       value: emotionTotal[key],
     });
   }
@@ -46,14 +46,14 @@ const ChartComponent = () => {
         decimals: 0,
         pieRadius: "45%",
         doughnutRadius: "60%",
-        showPercentValues: 0,
-        captionFontColor: "#102a42",
-        captionFontBold: 0,
-        captionFontSize: 20,
-        captionFont: "Roboto",
-        baseFont: "Open Sans",
-        baseFontSize: 16,
-        baseFontColor: "#617d98",
+        // showPercentValues: 0,
+        // captionFontColor: "#102a42",
+        // captionFontBold: 0,
+        // captionFontSize: 20,
+        // captionFont: "Roboto",
+        // baseFont: "Open Sans",
+        // baseFontSize: 16,
+        // baseFontColor: "#617d98",
         smartLineColor: "#617d98",
         showShadow: 0,
         showPlotBorder: 0,
@@ -63,6 +63,7 @@ const ChartComponent = () => {
         useDataPlotColorForLabels: 0,
         bgColor: "#FFFFFF",
         showBorder: 0,
+        them: "fusion",
       },
       // Chart Data
       data: chartData,
