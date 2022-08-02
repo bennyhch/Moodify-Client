@@ -10,10 +10,7 @@
 }
 
 .sidebar {
-  /* border: 1px solid red; */
-  background-color: var(--dashboardBackground)
-
-
+  background-color: var(--sidebarBackground)
 }
 
 /* @media (min-width: 992px) {

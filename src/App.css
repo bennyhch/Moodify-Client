@@ -12,7 +12,13 @@
 } 16px */ */
 
 
-
+:root {
+  /* colors */
+  --sidebarBackground: #FEFCFD;
+  /* --dashboardBackground: #F7F9F8; */
+  /* --dashboardBackground: red; */
+  --red: #ff0000;
+}
 
 
 .App {
@@ -23,6 +29,6 @@
     #E6E4EA ,
     #E0E9F4
   ); */
-  background-color: var(--dashboardBackground);
+  background: var(--dashboardBackground);
   height: 100vh;
 }

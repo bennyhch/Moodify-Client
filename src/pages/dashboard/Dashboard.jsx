@@ -12,6 +12,7 @@ import { getAllDailyEmotions } from "../../features/dailyEmotionSlice";
 import { getAllEvents } from "../../features/eventSlice";
 import EventDoughnutChart from "../../components/charts/EventDoughnutChart";
 import Cards from "../../components/cards/Cards";
+import styles from "./dashboard.module.css";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -54,18 +55,22 @@ const Dashboard = () => {
   }
 
   return (
-    <>
+    <div className={styles.dashboardContainer}>
       <Cards />
-      {isModalOpen && <DocModal />}
-      <DocAppointments setChangeOfItems={setChangeOfItems} />
 
-      {isMedModalOpen && <MedModal />}
-      <Medication setChangeOfItems={setChangeOfItems} />
+      <div className={styles.chartsContainer}>
+        <SleepBarChart />
+        <EventDoughnutChart />
+      </div>
 
-      {/* <ExampleChart /> */}
-      <SleepBarChart />
-      <EventDoughnutChart />
-    </>
+      <div className={styles.formsContainer}>
+        {isModalOpen && <DocModal />}
+        <DocAppointments setChangeOfItems={setChangeOfItems} />
+
+        {isMedModalOpen && <MedModal />}
+        <Medication setChangeOfItems={setChangeOfItems} />
+      </div>
+    </div>
   );
 };
 

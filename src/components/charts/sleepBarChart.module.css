@@ -1,0 +1,13 @@
+.barChartContainer {
+  border: 1px solid red
+}
+
+.barChartContainer header {
+  color: white;
+  background-color: aqua;
+  text-align: center;
+}
+
+.bgOceanGreen {
+  background-color: #6CC59F;
+}

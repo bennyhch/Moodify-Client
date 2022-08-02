@@ -16,8 +16,10 @@ code {
   /* colors */
   --sidebarBackground: #FEFCFD;
   --dashboardBackground: #F7F9F8;
+
   --red: #ff0000;
 }
+
 *,
 ::after,
 ::before {

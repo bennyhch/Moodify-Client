@@ -1,0 +1,53 @@
+.itemContainer {
+  flex: 1;
+  border: 1px solid rgb(230, 229, 229);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.itemContainer header {
+  text-align: center;
+}
+
+.itemContainer main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.textContainer {
+  /* border: 1px solid red; */
+  font-size: medium;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.textContainer p {
+  font-size: small;
+}
+
+header {
+  color: white;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+
+}
+
+.bgGreen {
+  background-color: #6DC69E;
+}
+
+.bgPurpleBlue {
+  background-color: #757699;
+}
+
+.bgLightBlue {
+background-color: #8EBAF0;
+}
+
+.bgGreyBlue {
+  background-color: #90C1C4;
+}
