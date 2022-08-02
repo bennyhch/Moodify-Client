@@ -1,0 +1,62 @@
+.navLinkContainer {
+
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+  padding: 15px 0;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0 1.5rem 0;
+}
+
+.navLinkContainer img {
+  width: 75%;
+}
+
+
+
+.navbtnContainer {
+  display: flex;
+  /* border: 1px solid green; */
+  margin: 10px 0;
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+  padding: 10px 0 10px 10px;
+
+}
+
+
+
+
+.navbtnContainer:hover {
+  background-color: #F3F4F3;
+  border-radius: 15px;
+  cursor:pointer; 
+}
+
+/* for smaller screen, bigger sidebar, wrap around the NavLink */
+/* .sidebarContent {
+  background: var(--white);
+  width: 90vw;
+  height: 95vh;
+  border-radius: var(--borderRadius);
+  padding: 4rem 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+
+/* font-size: 14px;
+    color: #6f6e6f;
+    min-width: 80px;
+    width: 100%;
+    margin-right: 10px; */

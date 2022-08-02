@@ -13,19 +13,16 @@
 
 
 
-:root {
-  /* colors */
-  --backgroundColor: #D8D2FC;
-  /* --primary-50: #e0fcff; */
-}
+
 
 .App {
-  background: linear-gradient(
+  /* background: linear-gradient(
     256.37deg,
     #D8D2FC ,
     #FDE2E0 ,
     #E6E4EA ,
     #E0E9F4
-  );
+  ); */
+  background-color: var(--dashboardBackground);
   height: 100vh;
 }
