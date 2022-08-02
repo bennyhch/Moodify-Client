@@ -11,6 +11,7 @@ import SleepBarChart from "../../components/charts/SleepBarChart";
 import { getAllDailyEmotions } from "../../features/dailyEmotionSlice";
 import { getAllEvents } from "../../features/eventSlice";
 import EventDoughnutChart from "../../components/charts/EventDoughnutChart";
+import Cards from "../../components/cards/Cards";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <Cards />
       {isModalOpen && <DocModal />}
       <DocAppointments setChangeOfItems={setChangeOfItems} />
 

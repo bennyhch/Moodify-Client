@@ -10,12 +10,13 @@ const twelveMonthsBefore = moment().subtract(12, "months");
 const initialState = {
   allDailyEmotion: [],
   isDailyLoading: true,
-  dailyEmotionLastWeek: [],
   emotionByDay: [],
   sleepByDay: [],
+  dailyEmotionLastWeek: [],
   dailyEmotionLastMonth: [],
   dailyEmotionLastYear: [],
   averageHrsSleepLastWeek: 0,
+  dailyCheckIn: false,
 };
 
 export const getAllDailyEmotions = createAsyncThunk(
@@ -87,6 +88,11 @@ const dailyEmotionSlice = createSlice({
         return prev + curr.value;
       }, 0);
       state.averageHrsSleepLastWeek = (totalHrsSleep / 7).toFixed(1);
+
+      state.dailyCheckIn = state.allDailyEmotion.some(
+        (el) =>
+          moment(el.day).format("MMMM Do YYYY") === today.format("MMMM Do YYYY")
+      );
     },
   },
 });
