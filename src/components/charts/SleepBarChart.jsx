@@ -40,7 +40,7 @@ const SleepBarChart = () => {
   const chartConfigs = {
     type: "column2d", // The chart type
     width: "500", // Width of the chart
-    height: "400", // Height of the chart
+    height: "350", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
       chart: {
@@ -52,7 +52,7 @@ const SleepBarChart = () => {
   };
   return (
     <div className={styles.barChartContainer}>
-      <header className={styles.bgOceanGreen}>
+      <header>
         <h4>HOURS OF SLEEP PER DAY: THIS WEEK</h4>
       </header>
       <ReactFC {...chartConfigs} />

@@ -1,21 +1,10 @@
-// STEP 1 - Include Dependencies
-// Include react
 import React from "react";
-
-// Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
-
-// Include the fusioncharts library
 import FusionCharts from "fusioncharts";
-
-// Include the chart type
 import Chart from "fusioncharts/fusioncharts.charts";
 import { useSelector } from "react-redux";
-
-// Adding the chart and theme as dependency to the core fusioncharts
+import styles from "./sleepBarChart.module.css";
 ReactFC.fcRoot(FusionCharts, Chart);
-
-// STEP 3 - Creating the JSON object to store the chart configurations
 
 const ChartComponent = () => {
   const { eventEmotionLastWeek } = useSelector((store) => store.event);
@@ -37,12 +26,10 @@ const ChartComponent = () => {
   const chartConfigs = {
     type: "doughnut2d", // The chart type
     width: "500", // Width of the chart
-    height: "400", // Height of the chart
+    height: "350", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
-      // Chart Configuration
       chart: {
-        caption: "The frequency of emotions: THIS WEEK",
         decimals: 0,
         pieRadius: "45%",
         doughnutRadius: "60%",
@@ -65,12 +52,18 @@ const ChartComponent = () => {
         showBorder: 0,
         them: "fusion",
       },
-      // Chart Data
       data: chartData,
     },
   };
 
-  return <ReactFC {...chartConfigs} />;
+  return (
+    <div className={styles.barChartContainer}>
+      <header>
+        <h4>THE FREQUENCY OF EMOTIONS: THIS WEEK</h4>
+      </header>
+      <ReactFC {...chartConfigs} />
+    </div>
+  );
 };
 
 export default ChartComponent;

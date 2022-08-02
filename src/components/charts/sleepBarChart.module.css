@@ -1,13 +1,15 @@
 .barChartContainer {
-  border: 1px solid red
+  border: 1px solid rgb(230, 229, 229);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .barChartContainer header {
   color: white;
-  background-color: aqua;
+  background-color: #90C1C4;
   text-align: center;
 }
 
-.bgOceanGreen {
+/* .bgOceanGreen {
   background-color: #6CC59F;
-}
+} */
