@@ -90,6 +90,9 @@ const docAppointmentsSlices = createSlice({
     editAppointment: (state) => {
       state.isEditing = true;
     },
+    doneEditAppointment: (state) => {
+      state.isEditing = false;
+    },
   },
   extraReducers: {
     //get all
@@ -144,6 +147,7 @@ const docAppointmentsSlices = createSlice({
   },
 });
 
-export const { editAppointment } = docAppointmentsSlices.actions;
+export const { editAppointment, doneEditAppointment } =
+  docAppointmentsSlices.actions;
 
 export default docAppointmentsSlices.reducer;

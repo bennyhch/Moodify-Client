@@ -1,0 +1,68 @@
+.darkBG {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 500px;
+  height: 500px;
+  background: white;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  padding: 7%;
+
+}
+
+.modalHeader {
+  height: 50px;
+  background: white;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modalContent {
+  font-size: 14px;
+  color: #2c3e50;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.textField {
+  padding: 7px 12px;
+}
+
+.modalContent input, .modalContent select {
+  margin-bottom: 4%;
+}
+
+.modalContent label {
+  padding-bottom: 6px;
+  color: #5C5E72;
+
+}
+
+.btnContainer {
+  text-align: right;
+  /* padding-top: 5px; */
+}

@@ -28,13 +28,15 @@ const EventPieChart = ({ emotion }) => {
 
   const chartConfigs = {
     type: "pie3d", // The chart type
-    width: "700", // Width of the chart
-    height: "400", // Height of the chart
+    // width: "700", // Width of the chart
+    // height: "400", // Height of the chart
+    width: "500", // Width of the chart
+    height: "300", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
       chart: {
         slicingDistance: "20",
-        caption: "The frequency of emotions",
+        // caption: "The frequency of emotions",
         // subCaption: "In MMbbl = One Million barrels",
         theme: "fusion",
       },

@@ -22,6 +22,7 @@ const EventDetails = (props) => {
         required
         onChange={changeHandler}
         value={eventsProfile[id]}
+        maxLength="500"
       />
     </>
   );

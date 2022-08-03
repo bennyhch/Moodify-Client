@@ -1,0 +1,9 @@
+.journalContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid blue; */
+  /* overflow-y: scroll; */
+  justify-content: space-around;
+  row-gap: 55px;
+
+}

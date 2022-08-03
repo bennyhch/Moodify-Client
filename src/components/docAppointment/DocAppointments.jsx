@@ -29,15 +29,14 @@ const DocAppointments = ({ setChangeOfItems }) => {
     dispatch(openModal());
   };
 
-  const addHandler = () => {
-    dispatch(openModal());
-  };
-
   const deleteHandler = async (appointmentId) => {
     await dispatch(deleteAppointment(appointmentId));
     setChangeOfItems((prev) => !prev);
   };
 
+  const addHandler = () => {
+    dispatch(openModal());
+  };
   if (isLoading) {
     return (
       <div>

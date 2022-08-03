@@ -6,6 +6,9 @@ import {
   updateMedication,
 } from "../../features/medication/medicationSlice";
 import { closeMedModal } from "../../features/modal/modalSlice";
+import styles from "./medModal.module.css";
+import SaveButton from "../tools/SaveButton";
+import { Button } from "@mui/material";
 
 const MedModal = () => {
   const dispatch = useDispatch();
@@ -67,64 +70,86 @@ const MedModal = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <h2>{isMedEditing ? "Edit" : "Add"} Your Medication</h2>
+    <div className={styles.darkBG}>
+      <div className={styles.centered}>
+        <div className={styles.modal}>
+          <form onSubmit={submitHandler}>
+            <div className={styles.modalHeader}>
+              <h2>{isMedEditing ? "Edit" : "Add"} Your Medication</h2>
+            </div>
 
-      <label htmlFor="medicationName">Name</label>
-      <input
-        type="text"
-        id="medicationName"
-        placeholder="Medication Name (e.g., Ritalin)"
-        value={medicationName}
-        onChange={(e) => setMedicationName(e.target.value)}
-      />
+            <div className={styles.modalContent}>
+              <label htmlFor="medicationName">Name</label>
+              <input
+                className={styles.textField}
+                type="text"
+                id="medicationName"
+                placeholder="Medication Name (e.g., Ritalin)"
+                value={medicationName}
+                onChange={(e) => setMedicationName(e.target.value)}
+              />
 
-      <label htmlFor="dosage">Dosage</label>
-      <input
-        type="number"
-        step="1"
-        min="0"
-        id="dosage"
-        placeholder="0"
-        value={dosage}
-        onChange={(e) => setDosage(e.target.value)}
-      />
+              <label htmlFor="dosage">Dosage</label>
+              <input
+                className={styles.textField}
+                type="number"
+                step="1"
+                min="0"
+                id="dosage"
+                placeholder="0"
+                value={dosage}
+                onChange={(e) => setDosage(e.target.value)}
+              />
 
-      <label htmlFor="units">Units</label>
-      <input
-        type="text"
-        placeholder="mg"
-        value={units}
-        onChange={(e) => setUnits(e.target.value)}
-      />
+              <label htmlFor="units">Units</label>
+              <input
+                className={styles.textField}
+                type="text"
+                placeholder="e.g., mg"
+                value={units}
+                onChange={(e) => setUnits(e.target.value)}
+              />
 
-      <label htmlFor="frequency">Frequency</label>
-      <select
-        name="frequency"
-        id="frequency"
-        value={frequency}
-        onChange={(e) => setFrequency(e.target.value)}
-      >
-        <option value="As needed">As Needed</option>
-        <option value="Every day">Every day</option>
-      </select>
+              <label htmlFor="frequency">Frequency</label>
+              <select
+                className={styles.textField}
+                name="frequency"
+                id="frequency"
+                value={frequency}
+                onChange={(e) => setFrequency(e.target.value)}
+              >
+                <option value="As needed">As Needed</option>
+                <option value="Every day">Every day</option>
+              </select>
 
-      <label htmlFor="timeOfDay">Time of day</label>
-      <select
-        name="timeOfDay"
-        id="timeOfDay"
-        value={timeOfDay}
-        onChange={(e) => setTimeOfDay(e.target.value)}
-      >
-        <option value="Any">Any</option>
-        <option value="AM">AM</option>
-        <option value="Mid-day">Mid-day</option>
-        <option value="AM &amp; PM">AM &amp; PM</option>
-      </select>
-
-      <button type="submit">Submit</button>
-      <button onClick={cancelHandler}>Cancel</button>
-    </form>
+              <label htmlFor="timeOfDay">Time of day</label>
+              <select
+                className={styles.textField}
+                name="timeOfDay"
+                id="timeOfDay"
+                value={timeOfDay}
+                onChange={(e) => setTimeOfDay(e.target.value)}
+              >
+                <option value="Any">Any</option>
+                <option value="AM">AM</option>
+                <option value="Mid-day">Mid-day</option>
+                <option value="AM &amp; PM">AM &amp; PM</option>
+              </select>
+            </div>
+            <div className={styles.btnContainer}>
+              <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
+                Save
+              </SaveButton>
+              <Button variant="contained" onClick={cancelHandler}>
+                Cancel
+              </Button>
+              {/* <button type="submit">Submit</button> */}
+              {/* <button onClick={cancelHandler}>Cancel</button> */}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

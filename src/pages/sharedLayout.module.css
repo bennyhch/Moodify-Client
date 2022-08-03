@@ -2,16 +2,21 @@
   display: grid;
   /* grid-template-columns: 1fr; */
   grid-template-columns: auto 1fr;
+  min-height: 100%;
 }
 .dashboardPage {
   width: 85vw;
   margin: 0 auto;
   /* padding: 2rem ; */
   padding: 1rem 1.5rem;
+
 }
 
 .sidebar {
-  background-color: var(--sidebarBackground)
+  background-color: var(--sidebarBackground);
+  /* border: 1px solid blue; */
+  /* height: 100%;
+  min-height: 100vh; */
 }
 
 /* @media (min-width: 992px) {
