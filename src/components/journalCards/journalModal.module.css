@@ -23,7 +23,6 @@
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  border: 1px solid red;
   padding: 30px;
 }
 
@@ -43,21 +42,9 @@
   flex-direction: column;
 }
 
-.textField {
-  padding: 7px 12px;
-}
 
-.modalContent input, .modalContent select {
-  margin-bottom: 4%;
-}
 
-.modalContent label {
-  padding-bottom: 6px;
-  color: #5C5E72;
-
-}
 
 .btnContainer {
   text-align: right;
-  /* padding-top: 5px; */
 }
