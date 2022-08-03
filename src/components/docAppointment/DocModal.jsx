@@ -97,6 +97,7 @@ const DocModal = () => {
           setLocation(e.target.value);
         }}
         required
+        maxlength="15"
       />
 
       <button type="submit">Submit</button>

@@ -9,6 +9,12 @@ import {
 } from "../../features/medication/medicationSlice";
 import { GoDiffAdded } from "react-icons/go";
 import { openMedModal } from "../../features/modal/modalSlice";
+import styles from "../docAppointment/docAppointment.module.css";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import { Tooltip } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
 
 const Medication = ({ setChangeOfItems }) => {
   const dispatch = useDispatch();
@@ -30,12 +36,24 @@ const Medication = ({ setChangeOfItems }) => {
   };
 
   return (
-    <section>
+    <section className={`${styles.tableContainer} ${styles.tableContainerMed}`}>
+      <header className={`${styles.header} ${styles.headerMed}`}>
+        <h4>MEDICATIONS LIST</h4>
+        <span>
+          <Tooltip title="Add appointment">
+            <AddBoxIcon
+              onClick={addHandler}
+              type="button"
+              sx={{ fontSize: 30 }}
+            />
+          </Tooltip>
+        </span>
+      </header>
       <table>
         <thead>
           <tr>
-            <th>Medication Name (Dosage)</th>
-            <th>Frequency</th>
+            <th className={styles.medName}>Medication Name (Dosage)</th>
+            <th className={styles.frequency}>Frequency</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -45,24 +63,45 @@ const Medication = ({ setChangeOfItems }) => {
               med;
             return (
               <tr key={_id}>
-                <td>{`${medicationName} (${dosage}${units})`}</td>
-                <td>{`${frequency}, ${timeOfDay}`}</td>
+                <td
+                  className={styles.medName}
+                >{`${medicationName} (${dosage}${units})`}</td>
+                <td
+                  className={styles.frequency}
+                >{`${frequency}, ${timeOfDay}`}</td>
                 <td>
-                  <button onClick={editHandler.bind(null, _id)}>
+                  <Tooltip title="edit">
+                    <IconButton aria-label="edit">
+                      <EditIcon
+                        fontSize="small"
+                        onClick={editHandler.bind(null, _id)}
+                      />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="delete">
+                    <IconButton aria-label="delete">
+                      <DeleteIcon
+                        fontSize="small"
+                        onClick={deleteHandler.bind(null, _id)}
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  {/* <button onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
                   </button>
                   <button onClick={deleteHandler.bind(null, _id)}>
                     <AiFillDelete />
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <button type="button" onClick={addHandler}>
+      {/* <button type="button" onClick={addHandler}>
         <GoDiffAdded />
-      </button>
+      </button> */}
     </section>
   );
 };

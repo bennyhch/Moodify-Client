@@ -1,0 +1,119 @@
+/* doc */
+.tableContainerDoc {
+  flex-grow: 2;
+}
+
+.headerDoc {
+  background-color: #F5B94E;
+
+}
+
+/* med */
+.tableContainerMed {
+  flex-grow: 1;
+}
+.headerMed {
+  background-color: #C7706D;
+  /* background-color: #4ba27e; */
+}
+.medName {
+  padding-left: 15px !important
+}
+
+.frequency {
+  /* width: 160px; */
+  padding-left: 20px;
+}
+
+/* //////////////////////////////////////////////////////////// */
+.tableContainer {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid rgb(230, 229, 229);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h4  {
+  display: inline;
+}
+
+.header span {
+  float: right;
+}
+
+.header span:hover {
+  cursor: pointer;
+}
+
+.tableContainer table {
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  text-align: center;
+	vertical-align: middle;
+  width: 100%;
+  /* border: 1px solid blue; */
+  font-size: 13px;
+  /* padding-left: 25px; */
+  /* padding-right: 10px; */
+
+}
+
+
+.tableContainer th {
+  /* background-color: #96aec4; */
+  padding: 8px 0;
+}
+
+tbody tr {
+  padding-top: 5px;
+}
+
+tbody {
+  display: block;
+  height: 115px;
+  /* overflow: auto; */
+  overflow-y: scroll
+}
+
+tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tbody th {
+  background-color: #36c;
+  color: #fff;
+  text-align: left;
+}
+
+.number {
+  /* background-color: red ; */
+  width: 15px;
+  padding-left: 15px !important
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.location {
+  /* width: 60px; */
+}
+/* .tableContainer thead th {
+  width: 50%;
+} */
+
+
+/* 
+th td {
+  padding: 2000%;
+} */

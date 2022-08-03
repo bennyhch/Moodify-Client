@@ -9,7 +9,13 @@ import {
   getAppointmentsById,
 } from "../../features/docAppointments/appointmentsSlice";
 import { openModal } from "../../features/modal/modalSlice";
-import { GoDiffAdded } from "react-icons/go";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import styles from "./docAppointment.module.css";
+import { AiOutlineFileAdd } from "react-icons/ai";
+import { Tooltip } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
+import EditIcon from "@mui/icons-material/Edit";
 
 const DocAppointments = ({ setChangeOfItems }) => {
   const dispatch = useDispatch();
@@ -41,14 +47,26 @@ const DocAppointments = ({ setChangeOfItems }) => {
   }
 
   return (
-    <section>
+    <section className={`${styles.tableContainer} ${styles.tableContainerDoc}`}>
+      <header className={`${styles.header} ${styles.headerDoc}`}>
+        <h4>BOOKED APPOINTMENTS</h4>
+        <span>
+          <Tooltip title="Add appointment">
+            <AddBoxIcon
+              onClick={addHandler}
+              type="button"
+              sx={{ fontSize: 30 }}
+            />
+          </Tooltip>
+        </span>
+      </header>
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th className={styles.number}>#</th>
             <th>Doctor Name</th>
             <th>Date</th>
-            <th>Location</th>
+            <th className={styles.location}>Location</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -58,28 +76,44 @@ const DocAppointments = ({ setChangeOfItems }) => {
               docAppointment;
             return (
               <tr key={_id}>
-                <td>{index + 1}</td>
+                <td className={styles.number}>{index + 1}</td>
                 <td>{doctorName}</td>
+                <td>{moment(dateOfAppointment).format("M-D-YY; H:mm")}</td>
+                <td className={styles.location}>{location}</td>
                 <td>
-                  {moment(dateOfAppointment).format("MMMM Do YYYY, h:mm a")}
-                </td>
-                <td>{location}</td>
-                <td>
-                  <button type="button" onClick={editHandler.bind(null, _id)}>
+                  <Tooltip title="edit">
+                    <IconButton aria-label="edit">
+                      <EditIcon
+                        fontSize="small"
+                        onClick={editHandler.bind(null, _id)}
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  {/* <button type="button" onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
-                  </button>
-                  <button type="button" onClick={deleteHandler.bind(null, _id)}>
+                  </button> */}
+                  <Tooltip title="delete">
+                    <IconButton aria-label="delete">
+                      <DeleteIcon
+                        fontSize="small"
+                        onClick={deleteHandler.bind(null, _id)}
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  {/* <button type="button" onClick={deleteHandler.bind(null, _id)}>
                     <AiFillDelete />
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <button type="button" onClick={addHandler}>
-        <GoDiffAdded />
-      </button>
+
+      {/* <button type="button" onClick={addHandler}>
+
+        <AiOutlineFileAdd />
+      </button> */}
     </section>
   );
 };
