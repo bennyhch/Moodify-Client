@@ -82,22 +82,22 @@ const DocAppointments = ({ setChangeOfItems }) => {
                 <td className={styles.location}>{location}</td>
                 <td>
                   <Tooltip title="edit">
-                    <IconButton aria-label="edit">
-                      <EditIcon
-                        fontSize="small"
-                        onClick={editHandler.bind(null, _id)}
-                      />
+                    <IconButton
+                      aria-label="edit"
+                      onClick={editHandler.bind(null, _id)}
+                    >
+                      <EditIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
                   {/* <button type="button" onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
                   </button> */}
                   <Tooltip title="delete">
-                    <IconButton aria-label="delete">
-                      <DeleteIcon
-                        fontSize="small"
-                        onClick={deleteHandler.bind(null, _id)}
-                      />
+                    <IconButton
+                      aria-label="delete"
+                      onClick={deleteHandler.bind(null, _id)}
+                    >
+                      <DeleteIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
                   {/* <button type="button" onClick={deleteHandler.bind(null, _id)}>
