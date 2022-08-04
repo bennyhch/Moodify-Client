@@ -53,7 +53,7 @@ const BipolarBarChart = () => {
   const dataSource = {
     chart: {
       // caption: "DEPRESSED AND ELEVATED MOODS: THIS WEEK",
-      palettecolors: "#F8C263,#DF3B43",
+      palettecolors: "#c58f8f,#8f96c5;",
       // yaxisname: "Revenue",
       // subcaption: "(On GAAP basis)",
       // numberprefix: "$",
@@ -80,7 +80,7 @@ const BipolarBarChart = () => {
   };
   return (
     <div className={styles.bipolarContainer}>
-      <Header backgroundColor={"#9e90c4"}>
+      <Header backgroundColor={"#c0c490"}>
         DEPRESSED AND ELEVATED MOODS: THIS WEEK
       </Header>
       <ReactFusioncharts

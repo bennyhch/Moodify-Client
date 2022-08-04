@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
-
 import FusionCharts from "fusioncharts";
+import React, { useState, useEffect } from "react";
 import TimeSeries from "fusioncharts/fusioncharts.timeseries";
 import ReactFC from "react-fusioncharts";
 import sleepSchema from "./sleepSchema";
 import { useSelector } from "react-redux";
+import Header from "../tools/Header";
+import styles from "./sleepByDayBarChart.module.css";
 
 ReactFC.fcRoot(FusionCharts, TimeSeries);
 const chart_props = {
   timeseriesDs: {
     type: "timeseries",
     renderAt: "container",
-    width: "600",
-    height: "800",
+    width: "100%",
+    height: "50%",
     dataEmptyMessage: "Fetching data...",
     dataSource: {
       navigator: {
@@ -21,21 +22,6 @@ const chart_props = {
       chart: {
         showlegend: 0,
       },
-      caption: {
-        text: "Daily Visitors Count of a Website",
-      },
-      yaxis: [
-        {
-          plot: {
-            value: "Daily Visitors",
-            type: "column",
-          },
-          format: {
-            suffix: "k",
-          },
-          title: "Daily Visitors Count",
-        },
-      ],
     },
   },
 };
@@ -62,7 +48,8 @@ const SleepByDayBarChart = () => {
   }, [isDailyLoading]);
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Header backgroundColor={"#b9c490"}>HOURS OF SLEEP</Header>
       <ReactFC {...ds.timeseriesDs} />
     </div>
   );

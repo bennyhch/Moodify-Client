@@ -69,5 +69,19 @@
 
 .logoContainer img {
   width: 100%;
-  /* border: 1px solid blue; */
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerContainer img {
+  width: 70%;
+}
+
+.mlogo {
+  padding-left: 50;
+  width: 50%;
+  text-align: center;
 }

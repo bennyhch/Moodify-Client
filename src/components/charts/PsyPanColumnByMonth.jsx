@@ -77,7 +77,7 @@ const PsycPanColumnByMonth = () => {
 
   return (
     <div className={styles.container}>
-      <Header backgroundColor={"#c490bc"}>Number of Occurence by Month</Header>
+      <Header backgroundColor={"#c490bc"}>NUMBER OF OCCURENCE BY MONTH</Header>
       <ReactFC {...chartConfigs} />
     </div>
   );

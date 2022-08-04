@@ -55,9 +55,16 @@ const Login = () => {
   return (
     <div className={styles.login}>
       <form className={styles.loginForm} onSubmit={submitHandler}>
-        <p className={styles.welcome}>Welcome!</p>
-        <h2>Sign {isNewMember ? "up" : "in"} to</h2>
-        <p>MOODIFY</p>
+        <div className={styles.headerContainer}>
+          <div>
+            <p className={styles.welcome}>Welcome!</p>
+            <h2>Sign {isNewMember ? "up" : "in"} to</h2>
+            <p>MOODIFY</p>
+          </div>
+          <div className={styles.mlogo}>
+            <img src={process.env.PUBLIC_URL + "assets/logo2.png"} alt="logo" />
+          </div>
+        </div>
 
         {isNewMember && <label htmlFor="username">User Name</label>}
         {isNewMember && (

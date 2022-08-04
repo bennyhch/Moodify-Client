@@ -66,7 +66,7 @@ const PsyPanBarChart = () => {
 
   return (
     <div className={styles.container}>
-      <Header backgroundColor={"#c490bc"}>
+      <Header backgroundColor={"#90c4af"}>
         NUMBER OF OCCURENCE IN THE PAST 30 DAYS
       </Header>
       <ReactFC {...chartConfigs} />
