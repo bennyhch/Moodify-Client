@@ -22,15 +22,11 @@ const Statistics = () => {
 
       <BipolarBarChart />
 
-      <div className={styles.psyPanContainer}>
-        <PsycPanColumnByMonth />
-        <PsyPanBarChart />
-      </div>
-      <div>
-        <SleepGauges />
+      <PsycPanColumnByMonth />
+      <PsyPanBarChart />
+      <SleepGauges />
 
-        <SleepByDayBarChart />
-      </div>
+      <SleepByDayBarChart />
     </div>
   );
 };

@@ -43,7 +43,6 @@ const chart_props = {
 };
 
 const EmotionTimeChart = () => {
-  // const chartData = useSelector((store) => store.dailyEmotion.depressionByDay);
   const { isDailyLoading, emotionByDay } = useSelector(
     (store) => store.dailyEmotion
   );
