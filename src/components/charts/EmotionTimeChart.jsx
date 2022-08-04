@@ -10,23 +10,26 @@ const chart_props = {
   timeseriesDs: {
     type: "timeseries",
     width: "600",
-    height: "800",
+    height: "750",
     dataEmptyMessage: "Fetching data...",
+    chart: {
+      labelFontSize: "1px",
+    },
     dataSource: {
       navigator: {
-        height: 500,
+        height: 450,
       },
-      caption: { text: "Online Sales of a SuperStore in the US" },
+      // caption: { text: "Online Sales of a SuperStore in the US" },
       data: null,
-      yAxis: [
-        {
-          plot: [
-            {
-              value: "Sales ($)",
-            },
-          ],
-        },
-      ],
+      // yAxis: [
+      //   {
+      //     plot: [
+      //       {
+      //         value: "Sales ($)",
+      //       },
+      //     ],
+      //   },
+      // ],
 
       // xAxis: {
       //   initialInterval: {

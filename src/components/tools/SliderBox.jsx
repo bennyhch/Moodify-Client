@@ -19,23 +19,21 @@ const SliderBox = ({ title, setEmotionsProfile, emotion }) => {
   };
 
   return (
-    <>
-      <div className={styles.box}>
-        <p>{title}</p>
-        <Slider
-          aria-label="Custom marks"
-          // defaultValue={value}
-          value={value}
-          step={1}
-          min={0}
-          max={3}
-          valueLabelDisplay="auto"
-          marks={sliderMarks}
-          onChange={sliderHandler}
-          sx={{ color: "warning.main", width: 250, height: 15 }}
-        />
-      </div>
-    </>
+    <div className={styles.box}>
+      <p>{title}</p>
+      <Slider
+        aria-label="Custom marks"
+        // defaultValue={value}
+        value={value}
+        step={1}
+        min={0}
+        max={3}
+        valueLabelDisplay="auto"
+        marks={sliderMarks}
+        onChange={sliderHandler}
+        sx={{ color: "warning.main", width: 100, height: 15 }}
+      />
+    </div>
   );
 };
 

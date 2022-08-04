@@ -1,7 +1,7 @@
 const dailyItems = [
   {
     id: 1,
-    title: "Rate your most extreme depressed mood: ",
+    title: "Today's most extreme depressed mood: ",
     emotion: "depressionExtreme",
   },
   {

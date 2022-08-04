@@ -1,0 +1,32 @@
+.dailyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 30px;
+
+}
+
+.sleepBoxContainer {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  margin: 3% 0 5% 0;
+}
+
+.formContainer {
+  font-size: 14px;
+}
+
+.dateSaveContainer {
+  margin-top: 8%;
+  /* border: 1px solid red;  */
+  display: flex;
+  justify-content: flex-end;
+  width: 93%;
+}
+
+.inputField {
+  /* border: 1px solid blue; */
+  padding: 10px;
+  border-radius: 5px;
+}

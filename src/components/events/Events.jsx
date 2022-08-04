@@ -6,7 +6,6 @@ import DateTimePicker from "react-datetime-picker";
 import eventDetailsItems from "../../data/eventDetailsItems";
 import EventDetails from "./EventDetails";
 import SaveButton from "../tools/SaveButton";
-import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
 import { closeAddEntryModal } from "../../features/modal/modalSlice";
 
@@ -96,12 +95,15 @@ const Events = () => {
           />
         </div>
         <div className={styles.btnContainer}>
-          {/* <button type="submit">SUBMIT</button> */}
-          <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
-            Save
-          </SaveButton>
-          <SaveButton variant="contained" onClick={cancelHandler}>
+          <SaveButton
+            variant="contained"
+            onClick={cancelHandler}
+            sx={{ mr: 2 }}
+          >
             Back
+          </SaveButton>
+          <SaveButton variant="contained" type="submit">
+            Save
           </SaveButton>
         </div>
       </div>

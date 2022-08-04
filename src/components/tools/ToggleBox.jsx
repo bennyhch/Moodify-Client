@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "@mui/material/Slider";
 import { useState } from "react";
 import { toggleMarks } from "../../data/sliderMarks";
+import styles from "./sliderBox.module.css";
 
 const ToggleBox = ({ title, toggle, setEmotionsProfile }) => {
   const [value, setValue] = useState(0);
@@ -22,7 +23,7 @@ const ToggleBox = ({ title, toggle, setEmotionsProfile }) => {
   };
 
   return (
-    <div>
+    <div className={styles.box}>
       <p>{title}</p>
       <Slider
         aria-label="Custom marks"
@@ -34,7 +35,7 @@ const ToggleBox = ({ title, toggle, setEmotionsProfile }) => {
         // valueLabelDisplay="auto"
         marks={toggleMarks}
         onChange={sliderHandler}
-        sx={{ color: "error.main", width: 250, height: 15 }}
+        sx={{ color: "error.main", width: 100, height: 15 }}
       />
     </div>
   );

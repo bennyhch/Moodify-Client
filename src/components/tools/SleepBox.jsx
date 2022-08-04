@@ -2,6 +2,7 @@ import { Slider } from "@mui/material";
 import React, { useState } from "react";
 import { sleepDailyItems } from "../../data/dailyItems";
 import { sleepMarks } from "../../data/sliderMarks";
+import styles from "./sliderBox.module.css";
 
 const SleepBox = ({ setEmotionsProfile }) => {
   const { title, hrs } = sleepDailyItems[0];
@@ -18,24 +19,22 @@ const SleepBox = ({ setEmotionsProfile }) => {
     }));
   };
   return (
-    <>
-      <div>
-        <p>{title}</p>
+    <div className={styles.sleepBox}>
+      <p>{title}</p>
 
-        <Slider
-          aria-label="Custom marks"
-          // defaultValue={value}
-          value={hours}
-          step={1}
-          min={0}
-          max={24}
-          valueLabelDisplay="auto"
-          marks={sleepMarks}
-          onChange={sliderHandler}
-          sx={{ color: "success.main", width: 250, height: 15 }}
-        />
-      </div>
-    </>
+      <Slider
+        aria-label="Custom marks"
+        // defaultValue={value}
+        value={hours}
+        step={1}
+        min={0}
+        max={24}
+        valueLabelDisplay="auto"
+        marks={sleepMarks}
+        onChange={sliderHandler}
+        sx={{ color: "success.main", width: 300, height: 15 }}
+      />
+    </div>
   );
 };
 

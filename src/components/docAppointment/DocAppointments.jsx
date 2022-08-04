@@ -1,6 +1,5 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
-import { FiEdit } from "react-icons/fi";
+
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import {
@@ -11,7 +10,6 @@ import {
 import { openModal } from "../../features/modal/modalSlice";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import styles from "./docAppointment.module.css";
-import { AiOutlineFileAdd } from "react-icons/ai";
 import { Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";

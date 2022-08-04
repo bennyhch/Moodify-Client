@@ -1,13 +1,10 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
-import { FiEdit } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteMedication,
   editMed,
   getOneMedication,
 } from "../../features/medication/medicationSlice";
-import { GoDiffAdded } from "react-icons/go";
 import { openMedModal } from "../../features/modal/modalSlice";
 import styles from "../docAppointment/docAppointment.module.css";
 import AddBoxIcon from "@mui/icons-material/AddBox";

@@ -5,8 +5,12 @@ import { toggleDailyItems } from "../../data/dailyItems";
 import ToggleBox from "../tools/ToggleBox";
 import SleepBox from "../tools/SleepBox";
 import moment from "moment";
+import styles from "./dailys.module.css";
+import SaveButton from "../tools/SaveButton";
+import { useSelector } from "react-redux";
 
 const Dailys = () => {
+  const { dailyCheckIn } = useSelector((store) => store.dailyEmotion);
   const today = new Date();
   const [emotionsProfile, setEmotionsProfile] = useState({
     depressionExtreme: 0,
@@ -69,17 +73,11 @@ const Dailys = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <>
-        <input
-          type="date"
-          value={emotionsProfile.day}
-          onChange={dayHandler}
-          max={moment(today).format("YYYY-MM-DD")}
-        />
-        <button type="sumbit">Submit</button>
-      </>
-      <>
+    <form onSubmit={submitHandler} className={styles.formContainer}>
+      <div className={styles.sleepBoxContainer}>
+        <SleepBox setEmotionsProfile={setEmotionsProfile} />
+      </div>
+      <div className={styles.dailyContainer}>
         {dailyItems.map((dailyItem) => {
           const { id, title, emotion } = dailyItem;
           return (
@@ -91,8 +89,6 @@ const Dailys = () => {
             />
           );
         })}
-      </>
-      <>
         {toggleDailyItems.map((toggleItem) => {
           const { id, title, toggle } = toggleItem;
           return (
@@ -104,10 +100,28 @@ const Dailys = () => {
             />
           );
         })}
-      </>
-      <>
-        <SleepBox setEmotionsProfile={setEmotionsProfile} />
-      </>
+      </div>
+      <div className={styles.dateSaveContainer}>
+        <div>
+          <input
+            type="date"
+            value={emotionsProfile.day}
+            onChange={dayHandler}
+            max={moment(today).format("YYYY-MM-DD")}
+            className={styles.inputField}
+          />
+        </div>
+        <div>
+          <SaveButton
+            variant="contained"
+            type="submit"
+            sx={{ ml: 4 }}
+            disabled={dailyCheckIn}
+          >
+            Save
+          </SaveButton>
+        </div>
+      </div>
     </form>
   );
 };

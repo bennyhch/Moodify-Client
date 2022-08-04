@@ -6,7 +6,6 @@ import medicationSlice from "./features/medication/medicationSlice";
 import dailyEmotionSlice from "./features/dailyEmotionSlice";
 import eventSlice from "./features/eventSlice";
 
-// modalReducer loginReducer docAppointmentsReducer
 export const store = configureStore({
   reducer: {
     login: loginSlice,
