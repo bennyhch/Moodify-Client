@@ -3,8 +3,10 @@ import charts from "fusioncharts/fusioncharts.charts";
 import ReactFusioncharts from "react-fusioncharts";
 import { useSelector } from "react-redux";
 import moment from "moment";
+import Header from "../tools/Header";
+import styles from "./bipolarBarChart.module.css";
+import { category } from "../../data/chart";
 
-// Resolves charts dependancy
 charts(FusionCharts);
 
 const BipolarBarChart = () => {
@@ -50,7 +52,7 @@ const BipolarBarChart = () => {
 
   const dataSource = {
     chart: {
-      caption: "DEPRESSED AND ELEVATED MOODS: THIS WEEK",
+      // caption: "DEPRESSED AND ELEVATED MOODS: THIS WEEK",
       palettecolors: "#F8C263,#DF3B43",
       // yaxisname: "Revenue",
       // subcaption: "(On GAAP basis)",
@@ -64,33 +66,7 @@ const BipolarBarChart = () => {
       theme: "fusion",
     },
 
-    categories: [
-      {
-        category: [
-          {
-            label: "Monday",
-          },
-          {
-            label: "Tuesday",
-          },
-          {
-            label: "Wednesday",
-          },
-          {
-            label: "Thursday",
-          },
-          {
-            label: "Friday",
-          },
-          {
-            label: "Saturday",
-          },
-          {
-            label: "Sunday",
-          },
-        ],
-      },
-    ],
+    categories: [{ category }],
     dataset: [
       {
         seriesname: "ELEVATED",
@@ -103,13 +79,18 @@ const BipolarBarChart = () => {
     ],
   };
   return (
-    <ReactFusioncharts
-      type="stackedcolumn2d"
-      width="100%"
-      height="100%"
-      dataFormat="JSON"
-      dataSource={dataSource}
-    />
+    <div className={styles.bipolarContainer}>
+      <Header backgroundColor={"#9e90c4"}>
+        DEPRESSED AND ELEVATED MOODS: THIS WEEK
+      </Header>
+      <ReactFusioncharts
+        type="stackedcolumn2d"
+        width="100%"
+        height="50%"
+        dataFormat="JSON"
+        dataSource={dataSource}
+      />
+    </div>
   );
 };
 

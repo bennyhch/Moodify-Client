@@ -26,6 +26,7 @@
 }
 
 /* //////////////////////////////////////////////////////////// */
+/* shared styling */
 .tableContainer {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border: 1px solid rgb(230, 229, 229);
@@ -33,19 +34,7 @@
   width: 100%;
 }
 
-.header {
-  text-align: center;
-}
-
-.header h4  {
-  display: inline;
-}
-
-.header span {
-  float: right;
-}
-
-.header span:hover {
+.addIcon:hover {
   cursor: pointer;
 }
 
@@ -104,16 +93,28 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #eee;
 }
-
-.location {
-  /* width: 60px; */
+/* header styling */
+.tableContainer li:first-child {
+  margin-right: auto;
+  visibility: hidden;
 }
-/* .tableContainer thead th {
-  width: 50%;
-} */
 
+.tableContainer li:last-child {
+  margin-left: auto;
+}
 
-/* 
-th td {
-  padding: 2000%;
-} */
+.tableContainer ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tableContainer li {
+  display: flex;
+  /* margin: 1px; */
+  /* padding: 5px; */
+}
+

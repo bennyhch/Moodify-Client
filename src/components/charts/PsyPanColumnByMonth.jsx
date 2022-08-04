@@ -1,57 +1,19 @@
 import React from "react";
-
-// Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
-
-// Include the fusioncharts library
 import FusionCharts from "fusioncharts";
-
-// Include the chart type
 import Column2D from "fusioncharts/fusioncharts.charts";
-
-// Include the theme as fusion
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 import { useSelector } from "react-redux";
-
-// Adding the chart and theme as dependency to the core fusioncharts
+import { psyPanCategory } from "../../data/chart";
+import { defaultValues } from "../../data/chart";
+import styles from "./psyPanColumnByMonth.module.css";
+import Header from "../tools/Header";
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
 const PsycPanColumnByMonth = () => {
   const { dailyEmotionLastYear } = useSelector((store) => store.dailyEmotion);
 
-  const categories = [
-    {
-      category: [
-        { label: "Jan" },
-        { label: "Feb" },
-        { label: "Mar" },
-        { label: "Apr" },
-        { label: "May" },
-        { label: "Jun" },
-        { label: "Jul" },
-        { label: "Aug" },
-        { label: "Sep" },
-        { label: "Oct" },
-        { label: "Nov" },
-        { label: "Dec" },
-      ],
-    },
-  ];
-
-  const defaultValues = {
-    0: 0,
-    1: 0,
-    2: 0,
-    3: 0,
-    4: 0,
-    5: 0,
-    6: 0,
-    7: 0,
-    8: 0,
-    9: 0,
-    10: 0,
-    11: 0,
-  };
+  const categories = [{ category: psyPanCategory }];
 
   const tempPanicObj = dailyEmotionLastYear.reduce((total, item) => {
     const { day, panicAttack } = item;
@@ -90,14 +52,16 @@ const PsycPanColumnByMonth = () => {
 
   const chartConfigs = {
     type: "mscolumn2d", // The chart type
-    width: "700", // Width of the chart
-    height: "400", // Height of the chart
+    // width: "700", // Width of the chart
+    // height: "400", // Height of the chart
+    width: "100%", // Width of the chart
+    height: "50%", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
       //Chart Configurations
       chart: {
         theme: "fusion",
-        caption: "Number of Occurence by Month",
+        // caption: "Number of Occurence by Month",
         xAxisname: "Month",
         // yAxisName: "Revenues (In USD)",
         // numberPrefix: "$",
@@ -111,7 +75,12 @@ const PsycPanColumnByMonth = () => {
     },
   };
 
-  return <ReactFC {...chartConfigs} />;
+  return (
+    <div className={styles.container}>
+      <Header backgroundColor={"#c490bc"}>Number of Occurence by Month</Header>
+      <ReactFC {...chartConfigs} />
+    </div>
+  );
 };
 
 export default PsycPanColumnByMonth;

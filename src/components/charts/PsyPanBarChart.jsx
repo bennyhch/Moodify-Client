@@ -1,24 +1,13 @@
-// STEP 1 - Include Dependencies
-// Include react
 import React from "react";
-
-// Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
-
-// Include the fusioncharts library
 import FusionCharts from "fusioncharts";
-
-// Include the chart type
 import Bar2D from "fusioncharts/fusioncharts.charts";
-
-// Include the theme as fusion
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 import { useSelector } from "react-redux";
+import styles from "./psyPanicBarChart.module.css";
+import Header from "../tools/Header";
 
-// Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Bar2D, FusionTheme);
-
-// STEP 4 - Creating the DOM element to pass the react-fusioncharts component
 
 const PsyPanBarChart = () => {
   const { dailyEmotionLastMonth } = useSelector((store) => store.dailyEmotion);
@@ -38,7 +27,6 @@ const PsyPanBarChart = () => {
     { psychotic: 0, panic: 0 }
   );
 
-  // STEP 2 - Chart Data
   const chartData = [
     {
       label: "Psychotic Symptoms",
@@ -50,32 +38,40 @@ const PsyPanBarChart = () => {
     },
   ];
 
-  // STEP 3 - Creating the JSON object to store the chart configurations
   const chartConfigs = {
     type: "bar2d", // The chart type
-    width: "700", // Width of the chart
-    height: "400", // Height of the chart
+    // width: "700", // Width of the chart
+    // height: "400", // Height of the chart
+    width: "100%", // Width of the chart
+    height: "50%", // Height of the chart
     dataFormat: "json", // Data type
     dataSource: {
-      // Chart Configuration
       chart: {
-        //Set the chart caption
-        caption: "NUMBER OF OCCURENCE IN THE PAST 30 DAYS",
-        //Set the chart subcaption
+        palettecolors: "#7D80C3, #62D1CC",
+        labelfontsize: "10px",
+        labelDisplay: "rotate",
+        // caption: "NUMBER OF OCCURENCE IN THE PAST 30 DAYS",
         // subCaption: "In MMbbl = One Million barrels",
-        //Set the x-axis name
         // xAxisName: "Country",
-        //Set the y-axis name
-        yAxisName: "Reserves (MMbbl)",
+        // yAxisName: "Reserves (MMbbl)",
         // numberSuffix: "K",
-        //Set the theme for your chart
         theme: "fusion",
+        showToolTip: "1",
+        yAxisMinValue: "0",
+        yAxisMaxValue: "31",
       },
-      // Chart Data
       data: chartData,
     },
   };
-  return <ReactFC {...chartConfigs} />;
+
+  return (
+    <div className={styles.container}>
+      <Header backgroundColor={"#c490bc"}>
+        NUMBER OF OCCURENCE IN THE PAST 30 DAYS
+      </Header>
+      <ReactFC {...chartConfigs} />
+    </div>
+  );
 };
 
 export default PsyPanBarChart;

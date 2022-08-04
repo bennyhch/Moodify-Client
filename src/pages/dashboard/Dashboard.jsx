@@ -20,7 +20,6 @@ const Dashboard = () => {
     (store) => store.docAppointment
   );
   const { isModalOpen, isMedModalOpen } = useSelector((store) => store.modal);
-
   const [changeOfItems, setChangeOfItems] = useState(false);
 
   useEffect(() => {

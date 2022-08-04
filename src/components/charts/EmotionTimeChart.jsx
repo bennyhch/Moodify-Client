@@ -39,7 +39,7 @@ const chart_props = {
   },
 };
 
-const ChartViewer = () => {
+const EmotionTimeChart = () => {
   // const chartData = useSelector((store) => store.dailyEmotion.depressionByDay);
   const { isDailyLoading, emotionByDay } = useSelector(
     (store) => store.dailyEmotion
@@ -74,4 +74,4 @@ const ChartViewer = () => {
   );
 };
 
-export default ChartViewer;
+export default EmotionTimeChart;

@@ -4,6 +4,7 @@ const initialState = {
   isModalOpen: false,
   isMedModalOpen: false,
   isJournalModalOpen: false,
+  isAddEntryModalOpen: false,
 };
 
 const modalSlice = createSlice({
@@ -31,6 +32,13 @@ const modalSlice = createSlice({
     closeJournalModal: (state) => {
       state.isJournalModalOpen = false;
     },
+    // adding entry to the journal
+    openAddEntryModal: (state) => {
+      state.isAddEntryModalOpen = true;
+    },
+    closeAddEntryModal: (state) => {
+      state.isAddEntryModalOpen = false;
+    },
   },
 });
 
@@ -41,6 +49,8 @@ export const {
   closeMedModal,
   openJournalModal,
   closeJournalModal,
+  openAddEntryModal,
+  closeAddEntryModal,
 } = modalSlice.actions;
 
 export default modalSlice.reducer;

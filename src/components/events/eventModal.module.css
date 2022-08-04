@@ -1,0 +1,71 @@
+.darkBG {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+
+}
+
+.modal {
+  width: 1000px;
+  height: 550px;
+  background: white;
+  /* color: white; */
+  z-index: 10;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* DELETE IF NOT USE !!! */
+.modalHeader {
+  /* height: 50px; */
+  background: white;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 1px solid blue;
+  text-align: center;
+}
+
+/* .modal form {
+  display: flex;
+  flex-direction: column;
+  padding: 7%;
+
+} */
+
+.modalContent {
+  /* font-size: 14px; */
+  /* color: #2c3e50; */
+  /* text-align: left; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* border: 1px solid red; */
+}
+
+
+/* .modalContent input {
+  margin-bottom: 5%;
+} */
+
+/* .modalContent label {
+  padding-bottom: 6px;
+  color: #5C5E72;
+} */
+
+/* .btnContainer {
+  text-align: right;
+  padding-top: 20px;
+} */

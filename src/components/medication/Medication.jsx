@@ -38,7 +38,31 @@ const Medication = ({ setChangeOfItems }) => {
   return (
     <section className={`${styles.tableContainer} ${styles.tableContainerMed}`}>
       <header className={`${styles.header} ${styles.headerMed}`}>
-        <h4>MEDICATIONS LIST</h4>
+        <ul>
+          <li>
+            <Tooltip title="Add appointment">
+              <AddBoxIcon
+                onClick={addHandler}
+                type="button"
+                sx={{ fontSize: 30 }}
+              />
+            </Tooltip>
+          </li>
+          <li>
+            <h4>MEDICATIONS LIST</h4>
+          </li>
+          <li>
+            <Tooltip title="Add appointment">
+              <AddBoxIcon
+                onClick={addHandler}
+                type="button"
+                sx={{ fontSize: 30 }}
+                className={styles.addIcon}
+              />
+            </Tooltip>
+          </li>
+        </ul>
+        {/* <h4>MEDICATIONS LIST</h4>
         <span>
           <Tooltip title="Add appointment">
             <AddBoxIcon
@@ -47,7 +71,7 @@ const Medication = ({ setChangeOfItems }) => {
               sx={{ fontSize: 30 }}
             />
           </Tooltip>
-        </span>
+        </span> */}
       </header>
       <table>
         <thead>

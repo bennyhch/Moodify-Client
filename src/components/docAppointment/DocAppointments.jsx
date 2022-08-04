@@ -48,7 +48,7 @@ const DocAppointments = ({ setChangeOfItems }) => {
   return (
     <section className={`${styles.tableContainer} ${styles.tableContainerDoc}`}>
       <header className={`${styles.header} ${styles.headerDoc}`}>
-        <h4>BOOKED APPOINTMENTS</h4>
+        {/* <h4>BOOKED APPOINTMENTS</h4>
         <span>
           <Tooltip title="Add appointment">
             <AddBoxIcon
@@ -57,7 +57,32 @@ const DocAppointments = ({ setChangeOfItems }) => {
               sx={{ fontSize: 30 }}
             />
           </Tooltip>
-        </span>
+        </span> */}
+
+        <ul>
+          <li>
+            <Tooltip title="Add appointment">
+              <AddBoxIcon
+                onClick={addHandler}
+                type="button"
+                sx={{ fontSize: 30 }}
+              />
+            </Tooltip>
+          </li>
+          <li>
+            <h4>BOOKED APPOINTMENTS</h4>
+          </li>
+          <li>
+            <Tooltip title="Add appointment">
+              <AddBoxIcon
+                onClick={addHandler}
+                type="button"
+                sx={{ fontSize: 30 }}
+                className={styles.addIcon}
+              />
+            </Tooltip>
+          </li>
+        </ul>
       </header>
       <table>
         <thead>

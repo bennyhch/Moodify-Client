@@ -3,7 +3,18 @@
   flex-wrap: wrap;
   /* border: 1px solid blue; */
   /* overflow-y: scroll; */
-  justify-content: space-around;
-  row-gap: 55px;
+  justify-content: space-evenly;
+  row-gap: 50px;
+  position: relative;
+}
 
+.addIcon {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  /* z-index: 1; */
+}
+
+.addIcon:hover {
+  cursor: pointer;
 }

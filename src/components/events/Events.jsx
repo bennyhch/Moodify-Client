@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-// import Tooltip from "@mui/material/Tooltip";
 import styles from "./events.module.css";
 import Emojis from "./Emojis";
 import emojiItems from "../../data/emojiItems";
 import DateTimePicker from "react-datetime-picker";
 import eventDetailsItems from "../../data/eventDetailsItems";
 import EventDetails from "./EventDetails";
+import SaveButton from "../tools/SaveButton";
+import Button from "@mui/material/Button";
+import { useDispatch } from "react-redux";
+import { closeAddEntryModal } from "../../features/modal/modalSlice";
 
 const Events = () => {
+  const dispatch = useDispatch();
   const initialState = {
     emotions: "",
     incident: "",
@@ -43,16 +47,20 @@ const Events = () => {
           incident,
         }),
       });
-      console.log("eventsProfile1", eventsProfile);
       setEventsProfile(initialState);
       console.log("eventsProfil2", eventsProfile);
     } catch (error) {
       console.log(error);
     }
+    dispatch(closeAddEntryModal());
+  };
+
+  const cancelHandler = () => {
+    dispatch(closeAddEntryModal());
   };
 
   return (
-    <form onSubmit={submitEventHandler}>
+    <form onSubmit={submitEventHandler} className={styles.formContainer}>
       <h1>How you feeling right now?</h1>
       <div className={styles.emojiContainer}>
         {emojiItems.map((emojiItem) => {
@@ -67,7 +75,7 @@ const Events = () => {
         })}
       </div>
 
-      <div>
+      <div className={styles.inputFieldContainer}>
         {eventDetailsItems.map((eventDetailsItem) => {
           return (
             <EventDetails
@@ -80,112 +88,25 @@ const Events = () => {
         })}
       </div>
 
-      <DateTimePicker
-        onChange={dateTimeHandler}
-        value={eventsProfile.timeOfEvent}
-      />
-
-      <button type="submit">SUBMIT</button>
+      <div className={styles.bottomRow}>
+        <div>
+          <DateTimePicker
+            onChange={dateTimeHandler}
+            value={eventsProfile.timeOfEvent}
+          />
+        </div>
+        <div className={styles.btnContainer}>
+          {/* <button type="submit">SUBMIT</button> */}
+          <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
+            Save
+          </SaveButton>
+          <SaveButton variant="contained" onClick={cancelHandler}>
+            Back
+          </SaveButton>
+        </div>
+      </div>
     </form>
   );
 };
 
 export default Events;
-
-// const incidentHandler = (e) => {
-//   setEventsProfile((prev) => ({
-//     ...prev,
-//     incident: e.target.value,
-//   }));
-// };
-
-// const thoughtHandler = (e) => {
-//   setEventsProfile((prev) => ({
-//     ...prev,
-//     thought: e.target.value,
-//   }));
-// };
-
-// const behaviorHandler = (e) => {
-//   setEventsProfile((prev) => ({
-//     ...prev,
-//     behavior: e.target.value,
-//   }));
-// };
-
-/* <label htmlFor="incident">Triggering Event?</label>
-      <input
-        type="text"
-        id="incident"
-        placeholder="e.g., My app has too many bugs..."
-        required
-        onChange={incidentHandler}
-      />
-
-      <label htmlFor="thought">What's on your mind?</label>
-      <input
-        type="text"
-        id="thought"
-        placeholder="e.g., I'm such a loser..."
-        required
-        onChange={thoughtHandler}
-      />
-
-      <label htmlFor="behavior">How did you react to it?</label>
-      <input
-        type="text"
-        id="behavior"
-        placeholder="e.g., I cried..."
-        required
-        onChange={behaviorHandler}
-      /> */
-
-/* <label htmlFor="happy">
-          <input
-            type="radio"
-            id="happy"
-            value="happy"
-            onChange={clickEmojiHandler}
-          />
-          <img src={happy} alt="happy" />
-        </label>
-
-        <label htmlFor="sad">
-          <input
-            type="radio"
-            id="sad"
-            value="sad"
-            onChange={clickEmojiHandler}
-          />
-          <img src={sad} alt="sad" />
-        </label>
-
-        <label htmlFor="angry">
-          <input
-            type="radio"
-            id="angry"
-            value="angry"
-            onChange={clickEmojiHandler}
-          />
-          <img src={angry} alt="angry" />
-        </label>
-
-        <label htmlFor="love">
-          <input
-            type="radio"
-            id="love"
-            value="love"
-            onChange={clickEmojiHandler}
-          />
-          <img src={love} alt="love" />
-        </label>
-
-        <label htmlFor="anxious">
-          <input
-            type="radio"
-            id="anxious"
-            value="anxious"
-            onChange={clickEmojiHandler}
-          />
-          <img src={anxious} alt="anxious" />
-        </label> */

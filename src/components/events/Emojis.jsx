@@ -1,3 +1,4 @@
+import { Tooltip } from "@mui/material";
 import React from "react";
 
 const Emojis = (props) => {
@@ -27,7 +28,9 @@ const Emojis = (props) => {
         name="emoji"
         required
       />
-      <img alt={emojiAlt} src={imageSrc} />
+      <Tooltip title={emotions.toUpperCase()}>
+        <img alt={emojiAlt} src={imageSrc} />
+      </Tooltip>
     </label>
   );
 };
