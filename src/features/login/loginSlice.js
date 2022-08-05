@@ -23,16 +23,12 @@ export const postLoginInfo = createAsyncThunk(
           password: user.password,
         }),
       });
-
-      // if (!resp.ok) {
-      //   console.log("error resp:", resp);
-      //   throw new Error(`Error! status: ${resp.status}`);
-      // }
       const result = await resp.json();
       console.log(result);
-      if (result.msg === "Account already existed") {
-        throw new Error(result.msg);
-      }
+      // if (result.msg === "Account already existed") {
+      //   throw new Error(result.msg);
+      // }
+
       if (!resp.ok) {
         throw new Error(result.msg);
       }

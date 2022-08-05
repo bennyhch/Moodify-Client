@@ -60,18 +60,13 @@ const Login = () => {
     console.log("HEY FUCKERcorrectAuth!!!!!!!!", correctAuth);
     if (correctAuth) {
       navigate("/");
-    } else {
-      setTimeout(() => {
-        navigate("/login");
-      }, 5000);
     }
+    // else {
+    //   setTimeout(() => {
+    //     navigate("/login");
+    //   }, 5000);
+    // }
   }, [correctAuth]);
-
-  // useEffect(() => {
-  //   if (!correctAuth) {
-  //     setShowWarning(true);
-  //   }
-  // }, [isSubmit]);
 
   return (
     <div className={styles.login}>
