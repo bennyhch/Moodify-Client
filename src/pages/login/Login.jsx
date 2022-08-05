@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import styles from "./login.module.css";
 import landingLogo from "../../assets/loginLogo.png";
@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom";
 // loading page
 
 const Login = () => {
-  const { correctAuth, isLoginLoading } = useSelector((store) => store.login);
+  const { correctAuth, isLoginLoading, showWarning, isAccountExisted } =
+    useSelector((store) => store.login);
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,7 +20,6 @@ const Login = () => {
   const passwordRef = useRef();
 
   const [isNewMember, setIsNewMember] = useState(false);
-  const [showWarning, setShowWarning] = useState(false);
 
   const registerHandler = () => {
     setIsNewMember((prev) => !prev);
@@ -43,9 +43,8 @@ const Login = () => {
       user.endpoint = "login";
       await dispatch(postLoginInfo(user));
     }
-    navigate("/");
 
-    // console.log("correctAuth", correctAuth);
+    // navigate("/");
     // if (!correctAuth) {
     //   setShowWarning(true);
     // }
@@ -56,6 +55,23 @@ const Login = () => {
     //   navigate("/");
     // }
   };
+
+  useEffect(() => {
+    console.log("HEY FUCKERcorrectAuth!!!!!!!!", correctAuth);
+    if (correctAuth) {
+      navigate("/");
+    } else {
+      setTimeout(() => {
+        navigate("/login");
+      }, 5000);
+    }
+  }, [correctAuth]);
+
+  // useEffect(() => {
+  //   if (!correctAuth) {
+  //     setShowWarning(true);
+  //   }
+  // }, [isSubmit]);
 
   return (
     <div className={styles.login}>
@@ -101,8 +117,10 @@ const Login = () => {
         />
 
         <button type="submit">Submit</button>
-        {console.log("showWarning:", showWarning)}
-        {/* {showWarning && <p>Invalid Credentials</p>} */}
+        {showWarning && <p className={styles.warning}>Invalid Credentials</p>}
+        {isAccountExisted && (
+          <p className={styles.warning}>Account already existed</p>
+        )}
 
         <footer>
           {isNewMember ? "Already have an account?  " : "Not a member yet?  "}
@@ -111,7 +129,6 @@ const Login = () => {
           </span>
         </footer>
       </form>
-
       <div className={styles.logoContainer}>
         <img src={landingLogo} alt="landing-logo" />
       </div>

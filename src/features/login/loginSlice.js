@@ -1,9 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+import axios from "axios";
 const initialState = {
   userName: "",
   correctAuth: false,
   isLoginLoading: true,
+  showWarning: false,
+  isAccountExisted: false,
 };
 
 export const postLoginInfo = createAsyncThunk(
@@ -28,12 +30,27 @@ export const postLoginInfo = createAsyncThunk(
       // }
       const result = await resp.json();
       console.log(result);
+      if (result.msg === "Account already existed") {
+        throw new Error(result.msg);
+      }
+      if (!resp.ok) {
+        throw new Error(result.msg);
+      }
       return result;
     } catch (error) {
-      return thunkAPI.rejectWithValue("Unable to send info to the DB");
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+
+export const logout = createAsyncThunk("login/logout", async (_, thunkAPI) => {
+  try {
+    const resp = await axios("/logout");
+    return resp.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
 
 export const loginSlice = createSlice({
   name: "login",
@@ -49,15 +66,25 @@ export const loginSlice = createSlice({
   extraReducers: {
     [postLoginInfo.fulfilled]: (state, action) => {
       console.log("fulfiled!!!");
-      state.isLoginLoading = false;
       state.correctAuth = true;
       console.log("state.correctAuth", state.correctAuth);
+      state.isLoginLoading = false;
     },
     [postLoginInfo.rejected]: (state, action) => {
-      state.isLoginLoading = false;
       state.correctAuth = false;
       console.log("rejected from extra reducers ");
       console.log("from slice, correctauth", state.correctAuth);
+      state.isLoginLoading = false;
+      if (action.payload === "Account already existed") {
+        state.isAccountExisted = true;
+        return;
+      }
+
+      console.log("error msg????", action.payload);
+      state.showWarning = true;
+    },
+    [logout.fulfilled]: (state, action) => {
+      state.correctAuth = false;
     },
   },
 });

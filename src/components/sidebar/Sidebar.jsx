@@ -1,17 +1,20 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
-import axios from "axios";
 import styles from "./sidebar.module.css";
 import { RiDashboardFill } from "react-icons/ri";
 import { ImClipboard, ImStatsDots } from "react-icons/im";
 import { BsJournalCheck } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/login/loginSlice";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const logoutHandler = async () => {
-    await axios("/logout");
+    // await axios("/logout");
+    await dispatch(logout());
     navigate("/login");
   };
 

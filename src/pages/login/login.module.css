@@ -46,7 +46,7 @@
   margin: 16px 0 0;
   padding: 6px 12px;
   /* background-color: #2CB1BC; */
-  background-color: #CA79C6;
+  background-color: #8EBAEE;
   color: white;
   border-radius: 5px;
   outline: none;
@@ -63,7 +63,7 @@
 
 .loginForm footer span {
   cursor: pointer;
-  color: #CA79C6;
+  color: #8EBAEE;
 }
 
 
@@ -84,4 +84,10 @@
   padding-left: 50;
   width: 50%;
   text-align: center;
+}
+
+.warning {
+  text-align: center;
+  background-color: #ae88ac; 
+  opacity: 0.5;
 }

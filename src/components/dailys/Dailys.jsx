@@ -116,6 +116,7 @@ const Dailys = () => {
             variant="contained"
             type="submit"
             sx={{ ml: 4 }}
+            // check just for today's check in from the slice
             disabled={dailyCheckIn}
           >
             Save
