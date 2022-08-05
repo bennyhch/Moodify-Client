@@ -4,6 +4,7 @@ import TimeSeries from "fusioncharts/fusioncharts.timeseries";
 import ReactFC from "react-fusioncharts";
 import schema from "./schema";
 import { useSelector } from "react-redux";
+import Header from "../tools/Header";
 
 ReactFC.fcRoot(FusionCharts, TimeSeries);
 const chart_props = {
@@ -71,6 +72,9 @@ const EmotionTimeChart = () => {
 
   return (
     <div>
+      <Header backgroundColor={"#90a7c4"}>
+        THE FEQUENCY OF EXTREME EMOTIONS
+      </Header>
       <ReactFC {...ds.timeseriesDs} />
     </div>
   );

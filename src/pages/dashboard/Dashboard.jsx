@@ -43,15 +43,15 @@ const Dashboard = () => {
     );
   }
 
-  if (docAppointments.length < 1) {
-    return (
-      <section>
-        <header>
-          <h2>You currently have no upcoming doctor appointment</h2>
-        </header>
-      </section>
-    );
-  }
+  // if (docAppointments.length < 1) {
+  //   return (
+  //     <section>
+  //       <header>
+  //         <h2>You currently have no upcoming doctor appointment</h2>
+  //       </header>
+  //     </section>
+  //   );
+  // }
 
   return (
     <div className={styles.dashboardContainer}>

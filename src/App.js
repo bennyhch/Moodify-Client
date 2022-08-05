@@ -7,6 +7,7 @@ import Statistics from "./pages/statistics/Statistics";
 import Journal from "./pages/journal/Journal";
 import SharedLayout from "./pages/SharedLayout";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import Error from "./pages/error/Error";
 
 function App() {
   return (
@@ -27,8 +28,7 @@ function App() {
           <Route path="journal" element={<Journal />} />
         </Route>
         <Route path="/login" element={<Login />} />
-
-        {/* <Route path='*' element={<Error />} /> */}
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

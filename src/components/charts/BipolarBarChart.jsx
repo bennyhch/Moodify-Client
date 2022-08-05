@@ -54,14 +54,15 @@ const BipolarBarChart = () => {
     chart: {
       // caption: "DEPRESSED AND ELEVATED MOODS: THIS WEEK",
       palettecolors: "#c58f8f,#8f96c5;",
-      // yaxisname: "Revenue",
+      yaxisname: "Level of Impairment",
+      subcaption: "0: None, 1: Mild, 2: Moderate, 3: Server",
       // subcaption: "(On GAAP basis)",
       // numberprefix: "$",
       yaxismaxvalue: "3",
       yaxisminvalue: "-3",
       // showsum: "1",
-      plottooltext:
-        "$seriesName on $label was <b>Server $dataValue</b>  ($percentValue of monthly total)",
+      // plottooltext: `$seriesName on $label was <b>${"Mild"} $dataValue </b>`,
+
       decimals: "1",
       theme: "fusion",
     },

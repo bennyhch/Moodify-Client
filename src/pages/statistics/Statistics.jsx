@@ -19,11 +19,9 @@ const Statistics = () => {
   return (
     <div className={styles.statisticsContainer}>
       <BipolarBarChart />
-
       <PsycPanColumnByMonth />
       <PsyPanBarChart />
       <SleepGauges />
-
       <SleepByDayBarChart />
       <EmotionTimeChartStat />
     </div>

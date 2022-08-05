@@ -4,6 +4,7 @@ import EmotionTimeChart from "../../components/charts/EmotionTimeChart";
 import Dailys from "../../components/dailys/Dailys";
 import { getAllDailyEmotions } from "../../features/dailyEmotionSlice";
 import styles from "./logger.module.css";
+// import EmotionTimeChartStat from "../../components/charts/EmotionTimeChartStat";
 
 const Logger = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,8 @@ const Logger = () => {
   return (
     <div className={styles.loggerContainer}>
       <EmotionTimeChart />
+      {/* <EmotionTimeChartStat /> */}
+
       <Dailys />
     </div>
   );

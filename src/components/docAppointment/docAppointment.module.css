@@ -3,6 +3,11 @@
   flex-grow: 2;
 }
 
+.emptyList {
+  padding: 15px;
+  text-transform: uppercase;
+}
+
 .headerDoc {
   background-color: #F5B94E;
 
@@ -12,6 +17,9 @@
 .tableContainerMed {
   flex-grow: 1;
 }
+
+
+
 .headerMed {
   background-color: #C7706D;
   /* background-color: #4ba27e; */

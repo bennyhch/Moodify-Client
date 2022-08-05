@@ -92,44 +92,54 @@ const DocAppointments = ({ setChangeOfItems }) => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {docAppointments.map((docAppointment, index) => {
-            const { doctorName, dateOfAppointment, location, _id } =
-              docAppointment;
-            return (
-              <tr key={_id}>
-                <td className={styles.number}>{index + 1}</td>
-                <td>{doctorName}</td>
-                <td>{moment(dateOfAppointment).format("M-D-YY; H:mm")}</td>
-                <td className={styles.location}>{location}</td>
-                <td>
-                  <Tooltip title="edit">
-                    <IconButton
-                      aria-label="edit"
-                      onClick={editHandler.bind(null, _id)}
-                    >
-                      <EditIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  {/* <button type="button" onClick={editHandler.bind(null, _id)}>
+        {docAppointments.length < 1 ? (
+          <tbody>
+            <tr>
+              <td className={styles.emptyList}>
+                <h4>You have no upcoming doc appointment ...</h4>
+              </td>
+            </tr>
+          </tbody>
+        ) : (
+          <tbody>
+            {docAppointments.map((docAppointment, index) => {
+              const { doctorName, dateOfAppointment, location, _id } =
+                docAppointment;
+              return (
+                <tr key={_id}>
+                  <td className={styles.number}>{index + 1}</td>
+                  <td>{doctorName}</td>
+                  <td>{moment(dateOfAppointment).format("M-D-YY; H:mm")}</td>
+                  <td className={styles.location}>{location}</td>
+                  <td>
+                    <Tooltip title="edit">
+                      <IconButton
+                        aria-label="edit"
+                        onClick={editHandler.bind(null, _id)}
+                      >
+                        <EditIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    {/* <button type="button" onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
                   </button> */}
-                  <Tooltip title="delete">
-                    <IconButton
-                      aria-label="delete"
-                      onClick={deleteHandler.bind(null, _id)}
-                    >
-                      <DeleteIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  {/* <button type="button" onClick={deleteHandler.bind(null, _id)}>
+                    <Tooltip title="delete">
+                      <IconButton
+                        aria-label="delete"
+                        onClick={deleteHandler.bind(null, _id)}
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    {/* <button type="button" onClick={deleteHandler.bind(null, _id)}>
                     <AiFillDelete />
                   </button> */}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        )}
       </table>
 
       {/* <button type="button" onClick={addHandler}>

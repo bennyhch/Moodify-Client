@@ -22,10 +22,10 @@ export const postLoginInfo = createAsyncThunk(
         }),
       });
 
-      if (!resp.ok) {
-        console.log("error resp:", resp);
-        throw new Error(`Error! status: ${resp.status}`);
-      }
+      // if (!resp.ok) {
+      //   console.log("error resp:", resp);
+      //   throw new Error(`Error! status: ${resp.status}`);
+      // }
       const result = await resp.json();
       console.log(result);
       return result;
@@ -48,8 +48,10 @@ export const loginSlice = createSlice({
   },
   extraReducers: {
     [postLoginInfo.fulfilled]: (state, action) => {
+      console.log("fulfiled!!!");
       state.isLoginLoading = false;
       state.correctAuth = true;
+      console.log("state.correctAuth", state.correctAuth);
     },
     [postLoginInfo.rejected]: (state, action) => {
       state.isLoginLoading = false;

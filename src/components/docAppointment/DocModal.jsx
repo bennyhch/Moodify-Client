@@ -113,14 +113,9 @@ const DocModal = () => {
               <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
                 Save
               </SaveButton>
-              {/* <Button variant="contained" type="submit" size="small">
-                Save Changes
-              </Button> */}
-              {/* <Button variant="contained" onClick={closeModalHandler}> */}
               <Button variant="contained" onClick={cancelHandler}>
                 Cancel
               </Button>
-              {/* <button type="submit">Submit</button> */}
             </div>
           </form>
         </div>

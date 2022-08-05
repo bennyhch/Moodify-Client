@@ -54,10 +54,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-/* <div className={styles.navbtnContainer}>
-        <span>
-          <FiLogOut onClick={logoutHandler} size={30} type="button" />
-        </span>
-        Logout
-      </div> */

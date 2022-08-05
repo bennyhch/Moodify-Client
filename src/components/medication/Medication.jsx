@@ -78,51 +78,64 @@ const Medication = ({ setChangeOfItems }) => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {medList.map((med) => {
-            const { dosage, frequency, medicationName, timeOfDay, units, _id } =
-              med;
-            return (
-              <tr key={_id}>
-                <td
-                  className={styles.medName}
-                >{`${medicationName} (${dosage}${units})`}</td>
-                <td
-                  className={styles.frequency}
-                >{`${frequency}, ${timeOfDay}`}</td>
-                <td>
-                  <Tooltip title="edit">
-                    <IconButton
-                      aria-label="edit"
-                      onClick={editHandler.bind(null, _id)}
-                    >
-                      <EditIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
+        {medList.length < 1 ? (
+          <tbody>
+            <tr>
+              <td className={styles.emptyList}>
+                <h4> No medications added ...</h4>
+              </td>
+            </tr>
+          </tbody>
+        ) : (
+          <tbody>
+            {medList.map((med) => {
+              const {
+                dosage,
+                frequency,
+                medicationName,
+                timeOfDay,
+                units,
+                _id,
+              } = med;
+              return (
+                <tr key={_id}>
+                  <td
+                    className={styles.medName}
+                  >{`${medicationName} (${dosage}${units})`}</td>
+                  <td
+                    className={styles.frequency}
+                  >{`${frequency}, ${timeOfDay}`}</td>
+                  <td>
+                    <Tooltip title="edit">
+                      <IconButton
+                        aria-label="edit"
+                        onClick={editHandler.bind(null, _id)}
+                      >
+                        <EditIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
 
-                  <Tooltip title="delete">
-                    <IconButton
-                      aria-label="delete"
-                      onClick={deleteHandler.bind(null, _id)}
-                    >
-                      <DeleteIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  {/* <button onClick={editHandler.bind(null, _id)}>
+                    <Tooltip title="delete">
+                      <IconButton
+                        aria-label="delete"
+                        onClick={deleteHandler.bind(null, _id)}
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    {/* <button onClick={editHandler.bind(null, _id)}>
                     <FiEdit />
                   </button>
                   <button onClick={deleteHandler.bind(null, _id)}>
                     <AiFillDelete />
                   </button> */}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        )}
       </table>
-      {/* <button type="button" onClick={addHandler}>
-        <GoDiffAdded />
-      </button> */}
     </section>
   );
 };

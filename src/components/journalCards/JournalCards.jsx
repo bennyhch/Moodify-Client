@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-import EventPieChart from "../charts/EventPieChart";
 import styles from "./journalCards.module.css";
 
 import Accordion from "@mui/material/Accordion";
@@ -28,7 +27,6 @@ const JournalCards = ({ emotion, imageSrc, setEmotionPie }) => {
       <Tooltip title="CLICK ME!">
         <div className={styles.imgContainer} onClick={openModalHandler}>
           <img src={imageSrc} alt={`${emotion}-emoji`} />
-          {/* <EventPieChart emotion={emotion} /> */}
         </div>
       </Tooltip>
       <div className={styles.emotionHeader}>{emotion}</div>

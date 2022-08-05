@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 // loading page
 
 const Login = () => {
-  const { correctAuth } = useSelector((store) => store.login);
+  const { correctAuth, isLoginLoading } = useSelector((store) => store.login);
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -42,14 +42,19 @@ const Login = () => {
     } else {
       user.endpoint = "login";
       await dispatch(postLoginInfo(user));
-      console.log("correctAuth", correctAuth);
-      if (!correctAuth) {
-        setShowWarning(true);
-      }
     }
-
-    // needs to GET data before redirecting the page
     navigate("/");
+
+    // console.log("correctAuth", correctAuth);
+    // if (!correctAuth) {
+    //   setShowWarning(true);
+    // }
+    // needs to GET data before redirecting the page
+    // if (isLoginLoading) {
+    //   return <h1>Loading ...</h1>;
+    // } else {
+    //   navigate("/");
+    // }
   };
 
   return (
@@ -97,7 +102,7 @@ const Login = () => {
 
         <button type="submit">Submit</button>
         {console.log("showWarning:", showWarning)}
-        {showWarning && <p>Invalid Credentials</p>}
+        {/* {showWarning && <p>Invalid Credentials</p>} */}
 
         <footer>
           {isNewMember ? "Already have an account?  " : "Not a member yet?  "}
