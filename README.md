@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Moodify-Client
+<p align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://user-images.githubusercontent.com/70516815/183447264-d74ebb70-ff04-47c5-99ae-cb1a69c9fe45.png" width="200" align="center">
+</p>
+<br>
 
-## Available Scripts
+- A mood-tracking and journaling app for users to keep track of their mood throughout the days
+- Helps to understand one's negative behaviors and thoughts, as well as the triggering events to a particular negative or positive emotion
+- Identify symptoms related to Post-Traumatic Stress Disorder, Bioplar Disorder, Depression, Anxiety Disorder
 
-In the project directory, you can run:
+## Screenshot 
 
-### `npm start`
+<p align="center">
+<img width="800" alt="Dashboard" src="https://user-images.githubusercontent.com/70516815/183446918-251c5eab-b4bd-4cbb-914e-ab977f34e8c7.png">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+<img width="800" alt="logger" src="https://user-images.githubusercontent.com/70516815/183449317-554f1f3b-4126-40bc-ad5e-8d293a3c147c.png">
+</p>
 
-### `npm test`
+<p align="center">
+<img width="800" alt="Journal Modal" src="https://user-images.githubusercontent.com/70516815/183449950-f69e0758-1efa-457d-95a8-2b89e7c4e477.png">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+<img width="800" alt="stat" src="https://user-images.githubusercontent.com/70516815/183450846-ca170132-95a6-427e-9c08-3688c35a9b9a.png">
+</p>
 
-### `npm run build`
+# Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In order to get the app running, you'll need to 
+1. Rename .env.temp to .env
+2. Fill out your own values for MONGO_URI, PORT, SECRET_KEY, COOKIE_LIFETIME
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation and start the server
+```
+npm install 
+npm start 
+```
 
-### `npm run eject`
+## Front-end
+1. You will need the Client repo to run this app. This can be found [here](https://github.com/bennyhch/Moodify-Client).
+2. Next, check the Client repo readme for information on installation of the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack
+- Redux Toolkit
+- Express.js
+- React 
+- MongoDB with Mongoose 
+- JSON Web Token
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author
+[Ben Ho](https://www.github.com/bennyhch) - [Linkedin](https://www.linkedin.com/in/ho-ben/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
