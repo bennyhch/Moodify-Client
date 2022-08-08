@@ -21,7 +21,6 @@ const Events = () => {
   const [eventsProfile, setEventsProfile] = useState(initialState);
 
   const dateTimeHandler = (newValue) => {
-    console.log(newValue);
     setEventsProfile((prev) => ({
       ...prev,
       timeOfEvent: newValue,
@@ -47,7 +46,7 @@ const Events = () => {
         }),
       });
       setEventsProfile(initialState);
-      console.log("eventsProfil2", eventsProfile);
+      // console.log("eventsProfil2", eventsProfile);
     } catch (error) {
       console.log(error);
     }

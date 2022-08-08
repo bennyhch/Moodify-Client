@@ -24,7 +24,7 @@ export const getAllDailyEmotions = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/dailyemotion");
-      console.log("resp.data.dailyEmotions", resp.data.dailyEmotions);
+      // console.log("resp.data.dailyEmotions", resp.data.dailyEmotions);
       return resp.data.dailyEmotions;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

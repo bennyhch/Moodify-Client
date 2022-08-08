@@ -9,9 +9,9 @@ const SleepBox = ({ setEmotionsProfile }) => {
   const [hours, setHours] = useState(0);
 
   const sliderHandler = (e) => {
-    console.log(hrs);
+    // console.log(hrs);
     setHours(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     setEmotionsProfile((prev) => ({
       ...prev,

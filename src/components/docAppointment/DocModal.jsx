@@ -54,7 +54,6 @@ const DocModal = () => {
         location,
       })
     );
-    console.log("Sent!");
     dispatch(closeModal());
   };
 
@@ -81,8 +80,6 @@ const DocModal = () => {
             }}
             required
           />
-
-          {console.log("docAppointmentById:", docAppointmentById)}
 
           <label htmlFor="location">Location</label>
           <input

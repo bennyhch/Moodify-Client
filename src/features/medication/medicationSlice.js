@@ -13,7 +13,7 @@ export const getMedications = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/medication");
-      console.log("resp.data.medication", resp.data.medication);
+      // console.log("resp.data.medication", resp.data.medication);
       return resp.data.medication;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -65,7 +65,7 @@ export const getOneMedication = createAsyncThunk(
   async (medId, thunkAPI) => {
     try {
       const resp = await axios(`/medication/${medId}`);
-      console.log("resp.data.medication!", resp.data.medication);
+      // console.log("resp.data.medication!", resp.data.medication);
       return resp.data.medication;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -120,7 +120,7 @@ const medicationSlice = createSlice({
     },
     [getOneMedication.fulfilled]: (state, action) => {
       state.isMedLoading = false;
-      console.log("payload", action.payload);
+      // console.log("payload", action.payload);
       state.medById = action.payload;
     },
     // update one

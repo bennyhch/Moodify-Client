@@ -12,9 +12,9 @@ import { Tooltip } from "@mui/material";
 
 const JournalCards = ({ emotion, imageSrc, setEmotionPie }) => {
   const { allEvent } = useSelector((store) => store.event);
-  console.log("allevent", allEvent);
+  // console.log("allevent", allEvent);
   const eventsByEmo = allEvent.filter((event) => event.emotions === emotion);
-  console.log("eventsbyemo", eventsByEmo);
+  // console.log("eventsbyemo", eventsByEmo);
   const dispatch = useDispatch();
 
   const openModalHandler = () => {

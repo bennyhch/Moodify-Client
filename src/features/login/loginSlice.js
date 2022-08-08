@@ -24,7 +24,7 @@ export const postLoginInfo = createAsyncThunk(
         }),
       });
       const result = await resp.json();
-      console.log(result);
+      // console.log(result);
       // if (result.msg === "Account already existed") {
       //   throw new Error(result.msg);
       // }
@@ -61,22 +61,21 @@ export const loginSlice = createSlice({
   },
   extraReducers: {
     [postLoginInfo.fulfilled]: (state, action) => {
-      console.log("fulfiled!!!");
       state.correctAuth = true;
-      console.log("state.correctAuth", state.correctAuth);
+      // console.log("state.correctAuth", state.correctAuth);
       state.isLoginLoading = false;
     },
     [postLoginInfo.rejected]: (state, action) => {
       state.correctAuth = false;
-      console.log("rejected from extra reducers ");
-      console.log("from slice, correctauth", state.correctAuth);
+      // console.log("rejected from extra reducers ");
+      // console.log("from slice, correctauth", state.correctAuth);
       state.isLoginLoading = false;
       if (action.payload === "Account already existed") {
         state.isAccountExisted = true;
         return;
       }
 
-      console.log("error msg????", action.payload);
+      // console.log("error msg????", action.payload);
       state.showWarning = true;
     },
     [logout.fulfilled]: (state, action) => {

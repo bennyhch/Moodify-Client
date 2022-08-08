@@ -6,7 +6,6 @@ import SaveButton from "../tools/SaveButton";
 import styles from "./dailysModal.module.css";
 import moment from "moment";
 let tmr = moment().add(1, "days").format("MMM Do, YY");
-console.log(tmr);
 
 const DailysModal = () => {
   const dispatch = useDispatch();

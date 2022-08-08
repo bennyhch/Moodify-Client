@@ -45,7 +45,7 @@ const Dailys = () => {
       hoursOfSleep,
       day,
     } = emotionsProfile;
-    console.log(emotionsProfile);
+    // console.log(emotionsProfile);
     try {
       await fetch("/dailyemotion", {
         method: "POST",
@@ -71,7 +71,7 @@ const Dailys = () => {
   };
 
   const dayHandler = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setEmotionsProfile((prev) => ({
       ...prev,
       day: e.target.value,

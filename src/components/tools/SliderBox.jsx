@@ -7,9 +7,9 @@ const SliderBox = ({ title, setEmotionsProfile, emotion }) => {
   const [value, setValue] = useState(0);
 
   const sliderHandler = (e) => {
-    console.log(emotion);
+    // console.log(emotion);
     setValue(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     setEmotionsProfile((prev) => ({
       ...prev,

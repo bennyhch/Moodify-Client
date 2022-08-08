@@ -29,7 +29,7 @@ export const getAppointments = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios("/appointment");
-      console.log("get state:", thunkAPI.getState().login.correctAuth);
+      // console.log("get state:", thunkAPI.getState().login.correctAuth);
       // console.log("resp.data.appointments:", resp.data.appointments);
       return resp.data.appointments;
     } catch (error) {
@@ -43,7 +43,7 @@ export const getAppointmentsById = createAsyncThunk(
   async (appointmentId, thunkAPI) => {
     try {
       const resp = await axios.get(`/appointment/${appointmentId}`);
-      console.log("res.data", resp.data.appointment);
+      // console.log("res.data", resp.data.appointment);
       return resp.data.appointment;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -75,7 +75,7 @@ export const deleteAppointment = createAsyncThunk(
   async (appointmentId, thunkAPI) => {
     try {
       const resp = await axios.delete(`/appointment/${appointmentId}`);
-      console.log("DELETE resp.data", resp.data);
+      // console.log("DELETE resp.data", resp.data);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -126,7 +126,7 @@ const docAppointmentsSlices = createSlice({
     [updateAppointmentById.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.isEditing = false;
-      console.log("update action.payload:", action.payload);
+      // console.log("update action.payload:", action.payload);
     },
     [updateAppointmentById.rejected]: (state) => {
       state.isLoading = false;
@@ -134,7 +134,7 @@ const docAppointmentsSlices = createSlice({
     },
     // create appointment
     [postAppointment.fulfilled]: (state, action) => {
-      console.log("action payload POST", action.payload);
+      // console.log("action payload POST", action.payload);
     },
     //delete appointment
     [deleteAppointment.fulfilled]: (state, action) => {

@@ -8,9 +8,9 @@ const ToggleBox = ({ title, toggle, setEmotionsProfile }) => {
   const [value, setValue] = useState(0);
 
   const sliderHandler = (e) => {
-    console.log(toggle);
+    // console.log(toggle);
     setValue(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let hasSymtpoms = false;
     if (e.target.value === 1) {
       hasSymtpoms = true;

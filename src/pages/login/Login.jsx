@@ -6,12 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { postLoginInfo } from "../../features/login/loginSlice";
 import { useNavigate } from "react-router-dom";
 
-// insert invalid credential case!!!!
-// loading page
-
 const Login = () => {
-  const { correctAuth, isLoginLoading, showWarning, isAccountExisted } =
-    useSelector((store) => store.login);
+  const { correctAuth, showWarning, isAccountExisted } = useSelector(
+    (store) => store.login
+  );
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -57,7 +55,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    console.log("HEY FUCKERcorrectAuth!!!!!!!!", correctAuth);
     if (correctAuth) {
       navigate("/");
     }

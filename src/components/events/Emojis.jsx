@@ -6,10 +6,9 @@ const Emojis = (props) => {
     props;
 
   const clickEmojiHandler = (e) => {
-    console.log("value?", e.target.value);
-    console.log(eventsProfile, "eventsProfile[emotions]");
-    // title?
-    // set the click
+    // console.log("value?", e.target.value);
+    // console.log(eventsProfile, "eventsProfile[emotions]");
+
     setEventsProfile((prev) => ({
       ...prev,
       emotions: e.target.title,
