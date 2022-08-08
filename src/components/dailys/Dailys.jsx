@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SliderBox from "../tools/SliderBox";
 import dailyItems from "../../data/dailyItems";
 import { toggleDailyItems } from "../../data/dailyItems";
@@ -31,7 +31,6 @@ const Dailys = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
     dispatch(openSaveLoggerModal());
     const {
       depressionExtreme,
