@@ -47,6 +47,8 @@ npm start
 - Express.js
 - React 
 - MongoDB with Mongoose 
+- FusionCharts
+- Material UI
 - JSON Web Token
 
 ## Author
