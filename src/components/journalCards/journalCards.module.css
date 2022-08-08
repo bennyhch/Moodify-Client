@@ -26,16 +26,14 @@
 
 }
 
-.subheading {
-  /* padding-bottom: 10px; */
-}
 
 .textContainer {
   /* border: 1px solid red; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 5px;
-  padding: 10px 10px 0 10px;
+  padding: 15px 10px 0 10px;
   margin-top: -25px;
+  color: grey;
 }
 
 .entry {

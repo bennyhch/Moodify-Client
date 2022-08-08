@@ -22,23 +22,6 @@ const chart_props = {
       },
       // caption: { text: "Online Sales of a SuperStore in the US" },
       data: null,
-      // yAxis: [
-      //   {
-      //     plot: [
-      //       {
-      //         value: "Sales ($)",
-      //       },
-      //     ],
-      //   },
-      // ],
-
-      // xAxis: {
-      //   initialInterval: {
-      //     from: "2016-01-01 12:00:00",
-      //     to: "2016-01-31 12:00:00"
-      //   }
-      // }
-      // https://www.fusioncharts.com/dev/fusiontime/fusiontime-attributes
     },
   },
 };

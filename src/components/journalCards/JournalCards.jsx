@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 import styles from "./journalCards.module.css";
-
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -39,12 +38,21 @@ const JournalCards = ({ emotion, imageSrc, setEmotionPie }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Incident</Typography>
+            <Typography sx={{ fontFamily: "PT Sans Narrow", fontSize: 20 }}>
+              Incident
+            </Typography>
           </AccordionSummary>
           {eventsByEmo.map((el) => {
             return (
               <AccordionDetails key={el._id}>
-                <Typography component={"div"}>
+                <Typography
+                  component={"div"}
+                  sx={{
+                    fontFamily: "PT Sans Narrow",
+                    fontStyle: "oblique",
+                    fontSize: 14,
+                  }}
+                >
                   <div className={styles.textContainer}>
                     <div className={styles.entry}>{el.incident} </div>
                     <div className={styles.entryDate}>
@@ -63,12 +71,21 @@ const JournalCards = ({ emotion, imageSrc, setEmotionPie }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Thought</Typography>
+            <Typography sx={{ fontFamily: "PT Sans Narrow", fontSize: 20 }}>
+              Thought
+            </Typography>
           </AccordionSummary>
           {eventsByEmo.map((el) => {
             return (
               <AccordionDetails key={el._id}>
-                <Typography component={"div"}>
+                <Typography
+                  component={"div"}
+                  sx={{
+                    fontFamily: "PT Sans Narrow",
+                    fontStyle: "oblique",
+                    fontSize: 14,
+                  }}
+                >
                   <div className={styles.textContainer}>
                     <div className={styles.entry}>{el.thought} </div>
                     <div className={styles.entryDate}>
@@ -87,12 +104,21 @@ const JournalCards = ({ emotion, imageSrc, setEmotionPie }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Behavior</Typography>
+            <Typography sx={{ fontFamily: "PT Sans Narrow", fontSize: 20 }}>
+              Behavior
+            </Typography>
           </AccordionSummary>
           {eventsByEmo.map((el) => {
             return (
               <AccordionDetails key={el._id}>
-                <Typography component={"div"}>
+                <Typography
+                  component={"div"}
+                  sx={{
+                    fontFamily: "PT Sans Narrow",
+                    fontStyle: "oblique",
+                    fontSize: 14,
+                  }}
+                >
                   <div className={styles.textContainer}>
                     <div className={styles.entry}>{el.behavior} </div>
                     <div className={styles.entryDate}>

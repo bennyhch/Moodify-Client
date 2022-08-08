@@ -100,7 +100,6 @@ const docAppointmentsSlices = createSlice({
       state.isLoading = true;
     },
     [getAppointments.fulfilled]: (state, action) => {
-      // console.log("action:", action);
       state.isLoading = false;
       state.docAppointments = action.payload;
     },

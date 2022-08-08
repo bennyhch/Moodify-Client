@@ -7,10 +7,14 @@ import SleepBox from "../tools/SleepBox";
 import moment from "moment";
 import styles from "./dailys.module.css";
 import SaveButton from "../tools/SaveButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { openSaveLoggerModal } from "../../features/modal/modalSlice";
 
 const Dailys = () => {
+  const dispatch = useDispatch();
+
   const { dailyCheckIn } = useSelector((store) => store.dailyEmotion);
+
   const today = new Date();
   const [emotionsProfile, setEmotionsProfile] = useState({
     depressionExtreme: 0,
@@ -27,6 +31,8 @@ const Dailys = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    dispatch(openSaveLoggerModal());
     const {
       depressionExtreme,
       elevationExtreme,
