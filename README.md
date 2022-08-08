@@ -30,21 +30,17 @@
 
 # Getting started
 
-## Prerequisites
+## Back-end
+1. You will need the Server repo to run this app. This can be found [here](https://github.com/bennyhch/Moodify-Server).
+2. Next, check the Server repo readme for information on installation of the app.
 
-In order to get the app running, you'll need to 
-1. Rename .env.temp to .env
-2. Fill out your own values for MONGO_URI, PORT, SECRET_KEY, COOKIE_LIFETIME
+## Installation
+After you follow all the installation process for Moodify-Server, then: 
 
-## Installation and start the server
 ```
 npm install 
 npm start 
 ```
-
-## Front-end
-1. You will need the Client repo to run this app. This can be found [here](https://github.com/bennyhch/Moodify-Client).
-2. Next, check the Client repo readme for information on installation of the app.
 
 ## Tech Stack
 - Redux Toolkit
