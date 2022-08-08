@@ -1,9 +1,9 @@
 # Moodify-Client
-<p align="center">
+<!-- <p align="center">
 
 <img src="https://user-images.githubusercontent.com/70516815/183447264-d74ebb70-ff04-47c5-99ae-cb1a69c9fe45.png" width="200" align="center">
 </p>
-<br>
+<br> -->
 
 - A mood-tracking and journaling app for users to keep track of their mood throughout the days
 - Helps to understand one's negative behaviors and thoughts, as well as the triggering events to a particular negative or positive emotion
