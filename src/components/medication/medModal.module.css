@@ -25,12 +25,16 @@
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
-.modal form {
+.formContent {
   display: flex;
   flex-direction: column;
   padding: 7%;
-
 }
+/* .modal form {
+  display: flex;
+  flex-direction: column;
+  padding: 7%;
+} */
 
 .modalHeader {
   height: 50px;

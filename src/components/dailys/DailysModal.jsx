@@ -5,6 +5,8 @@ import ModalWrapper from "../tools/ModalWrapper";
 import SaveButton from "../tools/SaveButton";
 import styles from "./dailysModal.module.css";
 import moment from "moment";
+let tmr = moment().add(1, "days").format("MMM Do, YY");
+console.log(tmr);
 
 const DailysModal = () => {
   const dispatch = useDispatch();
@@ -19,7 +21,7 @@ const DailysModal = () => {
         <h2>Daily Check-In</h2>
         <p>
           Saving today's ({moment().format("MMM Do, YY")}) emotion will prevent
-          you from further editing to the logger until tomorrow 00:00am.
+          you from further editing to the logger until {tmr} 00:00am.
         </p>
         <p>
           It'd be fine if you're just logging the previous day's emotions :D

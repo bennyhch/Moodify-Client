@@ -4,15 +4,9 @@
   height: 100vh;
   z-index: 1;
   position: absolute;
-
   top: 50%;
   left: 50%; 
   transform: translate(-50%, -50%);
-  
-  /* transform: translate(100%, 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .centered {
@@ -20,25 +14,18 @@
   top: 50%;
   left: 50%; 
   transform: translate(-50%, -50%);
-
-  /* transform: translate(100%, 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .modal {
-  /* width: 250px; */
   width: 500px;
   height: 400px;
   background: white;
-  /* color: white; */
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
-.modal form {
+.formContent {
   display: flex;
   flex-direction: column;
   padding: 7%;

@@ -46,17 +46,6 @@ const DocAppointments = ({ setChangeOfItems }) => {
   return (
     <section className={`${styles.tableContainer} ${styles.tableContainerDoc}`}>
       <header className={`${styles.header} ${styles.headerDoc}`}>
-        {/* <h4>BOOKED APPOINTMENTS</h4>
-        <span>
-          <Tooltip title="Add appointment">
-            <AddBoxIcon
-              onClick={addHandler}
-              type="button"
-              sx={{ fontSize: 30 }}
-            />
-          </Tooltip>
-        </span> */}
-
         <ul>
           <li>
             <Tooltip title="Add appointment">
@@ -120,9 +109,7 @@ const DocAppointments = ({ setChangeOfItems }) => {
                         <EditIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
-                    {/* <button type="button" onClick={editHandler.bind(null, _id)}>
-                    <FiEdit />
-                  </button> */}
+
                     <Tooltip title="delete">
                       <IconButton
                         aria-label="delete"
@@ -131,9 +118,6 @@ const DocAppointments = ({ setChangeOfItems }) => {
                         <DeleteIcon fontSize="small" />
                       </IconButton>
                     </Tooltip>
-                    {/* <button type="button" onClick={deleteHandler.bind(null, _id)}>
-                    <AiFillDelete />
-                  </button> */}
                   </td>
                 </tr>
               );
@@ -141,11 +125,6 @@ const DocAppointments = ({ setChangeOfItems }) => {
           </tbody>
         )}
       </table>
-
-      {/* <button type="button" onClick={addHandler}>
-
-        <AiOutlineFileAdd />
-      </button> */}
     </section>
   );
 };

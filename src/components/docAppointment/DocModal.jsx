@@ -10,6 +10,7 @@ import { closeModal } from "../../features/modal/modalSlice";
 import styles from "./docModal.module.css";
 import Button from "@mui/material/Button";
 import SaveButton from "../tools/SaveButton";
+import ModalWrapper from "../tools/ModalWrapper";
 
 const DocModal = () => {
   const dispatch = useDispatch();
@@ -63,64 +64,60 @@ const DocModal = () => {
   };
 
   return (
-    <div className={styles.darkBG}>
-      <div className={styles.centered}>
-        <div className={styles.modal}>
-          <form onSubmit={submitHandler}>
-            <div className={styles.modalHeader}>
-              <h2>{isEditing ? "Edit" : "Add"} Your Appointment</h2>
-            </div>
-            <div className={styles.modalContent}>
-              <label htmlFor="doctorName">Doctor Name</label>
-              <input
-                className={styles.textField}
-                type="text"
-                id="doctorName"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                required
-              />
-
-              {console.log("docAppointmentById:", docAppointmentById)}
-
-              <label htmlFor="location">Location</label>
-              <input
-                className={styles.textField}
-                type="text"
-                id="location"
-                value={location}
-                onChange={(e) => {
-                  setLocation(e.target.value);
-                }}
-                required
-                maxLength="15"
-              />
-
-              <label htmlFor="dateOfAppointment">Date</label>
-              <DateTimePicker
-                type="datetime-local"
-                id="dateOfAppointment"
-                value={date}
-                onChange={(e) => {
-                  setDate(e);
-                }}
-              />
-            </div>
-
-            <div className={styles.btnContainer}>
-              <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
-                Save
-              </SaveButton>
-              <Button variant="contained" onClick={cancelHandler}>
-                Cancel
-              </Button>
-            </div>
-          </form>
+    <ModalWrapper width={"500px"} height={"400px"}>
+      <form onSubmit={submitHandler} className={styles.formContent}>
+        <div className={styles.modalHeader}>
+          <h2>{isEditing ? "Edit" : "Add"} Your Appointment</h2>
         </div>
-      </div>
-    </div>
+        <div className={styles.modalContent}>
+          <label htmlFor="doctorName">Doctor Name</label>
+          <input
+            className={styles.textField}
+            type="text"
+            id="doctorName"
+            value={name}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            required
+          />
+
+          {console.log("docAppointmentById:", docAppointmentById)}
+
+          <label htmlFor="location">Location</label>
+          <input
+            className={styles.textField}
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => {
+              setLocation(e.target.value);
+            }}
+            required
+            maxLength="15"
+          />
+
+          <label htmlFor="dateOfAppointment">Date</label>
+          <DateTimePicker
+            type="datetime-local"
+            id="dateOfAppointment"
+            value={date}
+            onChange={(e) => {
+              setDate(e);
+            }}
+          />
+        </div>
+
+        <div className={styles.btnContainer}>
+          <SaveButton variant="contained" type="submit" sx={{ mr: 2 }}>
+            Save
+          </SaveButton>
+          <Button variant="contained" onClick={cancelHandler}>
+            Cancel
+          </Button>
+        </div>
+      </form>
+    </ModalWrapper>
   );
 };
 
