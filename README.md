@@ -5,10 +5,11 @@
 </p>
 <br> -->
 
+🔥 [Link to Moodify](https://tourmaline-chimera-ef3d1e.netlify.app/)
 - A mood-tracking and journaling app for users to keep track of their mood throughout the days
 - Provides insights into one's negative behaviors and thoughts, as well as the triggering events to a particular negative or positive emotion
 - Identifies symptoms related to Post-Traumatic Stress Disorder, Bioplar Disorder, Depression, Anxiety Disorder
-- 🔥 [Link to Moodify](https://tourmaline-chimera-ef3d1e.netlify.app/)
+
 
 ## Screenshot 
 
