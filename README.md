@@ -4,9 +4,7 @@
 <img src="https://user-images.githubusercontent.com/70516815/183447264-d74ebb70-ff04-47c5-99ae-cb1a69c9fe45.png" width="200" align="center">
 </p>
 <br> -->
-<p align='center' hidden>
-<a href='https://tourmaline-chimera-ef3d1e.netlify.app/'>🔥🔥Link to Moodify🔥🔥</a>
-</p>
+
 
 - A mood-tracking and journaling app for users to keep track of their mood throughout the days
 - Provides insights into one's negative behaviors and thoughts, as well as the triggering events to a particular negative or positive emotion
