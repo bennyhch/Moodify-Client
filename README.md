@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/70516815/183447264-d74ebb70-ff04-47c5-99ae-cb1a69c9fe45.png" width="200" align="center">
 </p>
 <br> -->
-<p align='center'>
+<p align='center' hidden>
 <a href='https://tourmaline-chimera-ef3d1e.netlify.app/'>🔥🔥Link to Moodify🔥🔥</a>
 </p>
 
